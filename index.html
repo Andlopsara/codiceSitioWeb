@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Códice 5.0 - Congreso Internacional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- MENÚ SUPERIOR -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="galeria/logo.png" alt="Códice 5.0 Logo">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#sobre-codice">Sobre Códice</a></li>
+                <li><a href="#programa">Programa</a></li>
+                <li><a href="#convocatoria">Convocatoria</a></li>
+                <li><a href="#sedes">Sedes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="galeria/videoFondo.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <span class="badge-title">1ER CONGRESO INTERNACIONAL</span>
+            <img src="galeria/logoWhite.png" alt="Códice 5.0" class="hero-logo">
+            <p class="hero-subtitle">DE OPERACIONES (OT), DATOS, INTELIGENCIA, CIBERSEGURIDAD Y ENTORNOS DIGITALES</p>
+            <div class="event-date-block">
+                <div class="date-icon">📅</div>
+                <div class="date-details">
+                    <div class="date-days">23 AL 25</div>
+                    <div class="date-month-location">DE SEPTIEMBRE 2026 | SANTIAGO DE QUERÉTARO, MÉXICO</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#convocatoria" class="btn btn-primary">REGÍSTRATE AHORA &rarr;</a>
+                <a href="#programa" class="btn btn-secondary">VER PROGRAMA &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE CÓDICE Y CONTADOR -->
+    <section id="sobre-codice" class="about-section">
+        <div class="countdown-wrapper">
+            <div class="countdown-card">
+                <h3 class="countdown-title">FALTAN PARA CÓDICE 5.0</h3>
+                <div class="countdown-grid">
+                    <div class="countdown-item"><div id="days" class="countdown-number">00</div><div class="countdown-label">Días</div></div>
+                    <div class="countdown-item"><div id="hours" class="countdown-number">00</div><div class="countdown-label">Horas</div></div>
+                    <div class="countdown-item"><div id="minutes" class="countdown-number">00</div><div class="countdown-label">Minutos</div></div>
+                    <div class="countdown-item"><div id="seconds" class="countdown-number">00</div><div class="countdown-label">Segundos</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-container">
+            <div class="about-text">
+                <h2>¿QUÉ ES<br><span>CÓDICE?</span></h2>
+                <p><strong>CÓDICE</strong> es el punto de encuentro donde la industria, la academia y los expertos en tecnología convergen para compartir conocimiento, tendencias y soluciones que impulsan la transformación digital e innovación.</p>
+            </div>
+            <div class="about-image">
+                <img src="RUTA_A_TU_IMAGEN_IA_FUTURISTA.jpg" alt="Innovación e IA">
+            </div>
+        </div>
+
+        <div class="topics-header">
+            <h3 class="topics-title">Temáticas Centrales</h3>
+            <span class="topics-subtitle">👇 Selecciona una temática para leer más</span>
+        </div>
+        <div class="topics-row">
+            <div class="topic-card" onclick="showDescription('ia', this)"><span class="topic-icon">🤖</span><div class="topic-name">Inteligencia Artificial</div></div>
+            <div class="topic-card" onclick="showDescription('ot', this)"><span class="topic-icon">⚙️</span><div class="topic-name">Operaciones (OT)</div></div>
+            <div class="topic-card" onclick="showDescription('datos', this)"><span class="topic-icon">🗄️</span><div class="topic-name">Datos</div></div>
+            <div class="topic-card" onclick="showDescription('ciber', this)"><span class="topic-icon">🔒</span><div class="topic-name">Ciberseguridad</div></div>
+            <div class="topic-card" onclick="showDescription('entornos', this)"><span class="topic-icon">☁️</span><div class="topic-name">Entornos Digitales</div></div>
+            <div class="topic-card" onclick="showDescription('ind5', this)"><span class="topic-icon">🦾</span><div class="topic-name">Industria 5.0</div></div>
+        </div>
+        <div id="description-box" class="topic-description-box">
+            <h4 id="desc-title">Título</h4>
+            <p id="desc-text">Texto de descripción...</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PROGRAMA CON ANIMACIÓN DE FONDO -->
+    <section id="programa" class="program-section">
+        <canvas id="canvas-network"></canvas>
+        <div class="program-content-wrapper">
+            <h2 style="color: #0b1f52; font-weight: 900;">PROGRAMA DEL CONGRESO</h2>
+            <div class="program-card">
+                <img src="RUTA_A_LA_IMAGEN_DE_TU_PROGRAMA.jpg" alt="Programa Códice 5.0" style="width: 100%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONVOCATORIA -->
+    <section id="convocatoria" class="convocatoria-section">
+        <h2 class="section-title">CONVOCATORIA</h2>
+        <p class="section-subtitle">Selecciona una modalidad para conocer los detalles, métricas e inscripciones</p>
+
+        <div class="convocatoria-grid">
+            <div class="conv-card">
+                <div class="conv-card-header">
+                    <h3>Presentación de Pósteres y Trabajos Orales</h3>
+                    <span class="conv-card-icon">📊</span>
+                </div>
+                <p>Comparte tu investigación y proyectos académicos o industriales. Consulta la métrica de evaluación y descarga la plantilla de formato extenso.</p>
+                <div class="conv-card-actions">
+                    <a href="LINK_REGISTRO_POSTERS_Y_PRESENTACIONES" target="_blank" class="btn-conv">Registro de Participación &rarr;</a>
+                    <a href="LINK_DESCARGA_TRABAJO_EXTENSO.docx" class="btn-conv-outline">📥 Descargar Formato Extenso</a>
+                    <a href="LINK_METRICAS_POSTERS.pdf" target="_blank" class="btn-conv-outline">📋 Métricas de Evaluación</a>
+                </div>
+            </div>
+
+            <div class="conv-card orange">
+                <div class="conv-card-header">
+                    <h3>Hackathon Códice 2026</h3>
+                    <span class="conv-card-icon">💻</span>
+                </div>
+                <p>Demuestra tu talento resolviendo retos tecnológicos en tiempo real con impacto en la industria 5.0 y ciberseguridad.</p>
+                <div class="conv-card-actions">
+                    <a href="LINK_FORMULARIO_HACKATHON" target="_blank" class="btn-conv">Formulario de Registro &rarr;</a>
+                    <a href="LINK_METRICAS_HACKATHON.pdf" target="_blank" class="btn-conv-outline">📋 Métricas de la Convocatoria</a>
+                    <a href="LINK_CARTA_RESPONSIVA_HACKATHON.pdf" download class="btn-conv-outline">📥 Descargar Carta Responsiva</a>
+                </div>
+            </div>
+
+            <div class="conv-card">
+                <div class="conv-card-header">
+                    <h3>Talleres y Cursos Prácticos</h3>
+                    <span class="conv-card-icon">🎓</span>
+                </div>
+                <p>Aprende de manera interactiva con expertos de la industria. Cupo limitado a 20 participantes por taller para garantizar aprendizaje personalizado.</p>
+                <div class="conv-card-actions">
+                    <button onclick="toggleTalleres()" class="btn-conv" style="border:none; cursor:pointer;">Ver los 11 Talleres &darr;</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="workshops-container" class="workshops-container">
+            <button onclick="closeTalleres()" class="close-workshops-btn" title="Cerrar talleres">&times;</button>
+            <h3 class="workshops-title">Talleres Disponibles (Cupo Máximo 20 por Taller)</h3>
+            
+            <div class="workshops-grid">
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_1.jpg" alt="Tallerista 1" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Dr. Roberto Gómez</div>
+                                <span class="workshop-badge">Especialista OT</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Ciberseguridad en Entornos SCADA</div>
+                        <div class="workshop-desc">Configuración práctica de redes defensivas y detección de intromisiones industriales en tiempo real.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_1" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_2.jpg" alt="Tallerista 2" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Ing. Sofía Morales</div>
+                                <span class="workshop-badge">IA & Data</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">IA Generativa Aplicada a Datos Masivos</div>
+                        <div class="workshop-desc">Desarrollo de pipelines automatizados de análisis utilizando Python y LLMs locales.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_2" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-to-convocatoria-wrapper">
+                <button onclick="closeTalleres()" class="btn-back-up">&uarr; Volver a Convocatorias</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: SEDES -->
+    <section id="sedes" class="sedes-section">
+        <h2 class="section-title">SEDES</h2>
+        <p class="section-subtitle">Conoce los lugares donde se llevarán a cabo las actividades del congreso</p>
+
+        <div class="sedes-grid">
+            <div class="sede-card">
+                <img src="RUTA_A_FOTO_UTEQ.jpg" alt="Universidad Tecnológica de Querétaro" class="sede-image">
+                <div class="sede-content">
+                    <div>
+                        <span class="sede-tag">SEDE PRINCIPAL</span>
+                        <h3 class="sede-name">UTEQ</h3>
+                        <p class="sede-desc">Universidad Tecnológica de Querétaro. Sede de inauguración y clausura del congreso.</p>
+                        <div class="sede-address">
+                            📍 Av. Pie de la Cuesta No. 2501, Col. Nacional, Querétaro, Qro. C.P. 76148
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Universidad+Tecnol%C3%B3gica+de+Quer%C3%A9taro" target="_blank" class="btn-map">CÓMO LLEGAR &rarr;</a>
+                </div>
+            </div>
+
+            <div class="sede-card">
+                <img src="RUTA_A_FOTO_ANAHUAC.jpg" alt="Universidad Anáhuac Querétaro" class="sede-image">
+                <div class="sede-content">
+                    <div>
+                        <span class="sede-tag">SEDE SECUNDARIA</span>
+                        <h3 class="sede-name">Universidad Anáhuac</h3>
+                        <p class="sede-desc">Universidad Anáhuac Campus Querétaro. Sede matutina para las mesas del Día 02.</p>
+                        <div class="sede-address">
+                            📍 Cto. Universidades I, Fracción 2, Zibatá, Querétaro, Qro. C.P. 76246
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Universidad+An%C3%A1huac+Quer%C3%A9taro" target="_blank" class="btn-map">CÓMO LLEGAR &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRANJA BLANCA PARA IMAGEN ÚNICA DE LOGOS -->
+    <div class="logos-strip">
+        <img src="RUTA_A_TU_IMAGEN_DE_LOGOS.png" alt="Logos Institucionales">
+    </div>
+
+    <!-- FOOTER Y CONTACTO -->
+    <footer id="contacto" class="footer-section">
+        <div class="footer-grid">
+            <!-- COLUMNA 1: MARCA Y ORGANIZADOR -->
+            <div class="footer-brand">
+                <img src="RUTA_A_TU_LOGO_PRINCIPAL.png" alt="Códice 5.0" class="footer-logo">
+                <p>1er Congreso Internacional de Operaciones (OT), Datos, Inteligencia, Ciberseguridad y Entornos Digitales.</p>
+                <p class="footer-organizer">Organizado por la Universidad Tecnológica de Querétaro</p>
+            </div>
+
+            <!-- COLUMNA 2: NAVEGACIÓN -->
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#sobre-codice">Temáticas</a></li>
+                    <li><a href="#programa">Programa</a></li>
+                    <li><a href="#sedes">Sedes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- COLUMNA 3: INFORMACIÓN DE CONTACTO -->
+            <div class="footer-col">
+                <h4>Información</h4>
+                <ul class="contact-info-list">
+                    <li class="contact-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:correo@uteq.edu.mx">correo@uteq.edu.mx</a>
+                    </li>
+                    <li class="contact-item">
+                        <span class="icon">📍</span>
+                        <span>Av. Pie de la Cuesta No. 2501, Col. Nacional, Querétaro, Qro. C.P. 76148</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="icon">📞</span>
+                        <span>Tels. (442) 209 6100 al 04</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- BARRA INFERIOR -->
+        <div class="footer-bottom">
+            <div>© 2026 CÓDICE 5.0. Todos los derechos reservados.</div>
+            <div>
+                <a href="https://www.uteq.edu.mx" target="_blank">www.uteq.edu.mx</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+</html>
