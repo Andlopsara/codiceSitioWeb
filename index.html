@@ -11,16 +11,24 @@
     <!-- MENÚ SUPERIOR -->
     <header class="header">
         <div class="logo-container">
-            <img src="galeria/logo.png" alt="Códice 5.0 Logo">
+            <a href="#" onclick="closeMenu()">
+                <img src="galeria/logo.png" alt="Códice 5.0 Logo">
+            </a>
         </div>
-        <nav class="navbar">
+        
+        <!-- (MÓVIL) -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <nav class="navbar" id="navbar">
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#sobre-codice">Sobre Códice</a></li>
-                <li><a href="#programa">Programa</a></li>
-                <li><a href="#convocatoria">Convocatoria</a></li>
-                <li><a href="#sedes">Sedes</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" onclick="closeMenu()">Inicio</a></li>
+                <li><a href="#sobre-codice" onclick="closeMenu()">Sobre CODICE</a></li>
+                <li><a href="#programa" onclick="closeMenu()">Programa</a></li>
+                <li><a href="#convocatoria" onclick="closeMenu()">Convocatoria</a></li>
+                <li><a href="#sedes" onclick="closeMenu()">Sedes</a></li>
+                <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -28,11 +36,11 @@
     <!-- HERO SECTION -->
     <section class="hero-section">
         <video autoplay muted loop playsinline class="hero-video">
-            <source src="galeria/videoFondo.mp4" type="video/mp4">
+            <source src="galeria/videoF2.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
             <span class="badge-title">1ER CONGRESO INTERNACIONAL</span>
-            <img src="galeria/logoWhite.png" alt="Códice 5.0" class="hero-logo">
+            <img src="galeria/logoWhite.png" alt="Codice 5.0" class="hero-logo">
             <p class="hero-subtitle">DE OPERACIONES (OT), DATOS, INTELIGENCIA, CIBERSEGURIDAD Y ENTORNOS DIGITALES</p>
             <div class="event-date-block">
                 <div class="date-icon">📅</div>
@@ -52,7 +60,7 @@
     <section id="sobre-codice" class="about-section">
         <div class="countdown-wrapper">
             <div class="countdown-card">
-                <h3 class="countdown-title">FALTAN PARA CÓDICE 5.0</h3>
+                <h3 class="countdown-title">CUENTA REGRESIVA PARA EL CONGRESO</h3>
                 <div class="countdown-grid">
                     <div class="countdown-item"><div id="days" class="countdown-number">00</div><div class="countdown-label">Días</div></div>
                     <div class="countdown-item"><div id="hours" class="countdown-number">00</div><div class="countdown-label">Horas</div></div>
@@ -64,17 +72,17 @@
 
         <div class="about-container">
             <div class="about-text">
-                <h2>¿QUÉ ES<br><span>CÓDICE?</span></h2>
-                <p><strong>CÓDICE</strong> es el punto de encuentro donde la industria, la academia y los expertos en tecnología convergen para compartir conocimiento, tendencias y soluciones que impulsan la transformación digital e innovación.</p>
+                <h2>¿QUÉ ES<br><span>CODICE?</span></h2>
+                <p><strong>CODICE</strong> es el punto de encuentro donde la industria, la academia y los expertos en tecnología convergen para compartir conocimiento, tendencias y soluciones que impulsan la transformación digital e innovación.</p>
             </div>
             <div class="about-image">
-                <img src="RUTA_A_TU_IMAGEN_IA_FUTURISTA.jpg" alt="Innovación e IA">
+                <img src="galeria/imagen1.png" alt="Innovación e IA">
             </div>
         </div>
 
         <div class="topics-header">
             <h3 class="topics-title">Temáticas Centrales</h3>
-            <span class="topics-subtitle">👇 Selecciona una temática para leer más</span>
+            <span class="topics-subtitle">Selecciona una temática para leer más</span>
         </div>
         <div class="topics-row">
             <div class="topic-card" onclick="showDescription('ia', this)"><span class="topic-icon">🤖</span><div class="topic-name">Inteligencia Artificial</div></div>
@@ -85,18 +93,123 @@
             <div class="topic-card" onclick="showDescription('ind5', this)"><span class="topic-icon">🦾</span><div class="topic-name">Industria 5.0</div></div>
         </div>
         <div id="description-box" class="topic-description-box">
+            <button class="close-topic-btn" onclick="closeDescription()" title="Cerrar">&times;</button>
             <h4 id="desc-title">Título</h4>
             <p id="desc-text">Texto de descripción...</p>
         </div>
+
+        <!-- BOTÓN Y DESPLIEGUE DEL COMITÉ ORGANIZADOR -->
+        <div class="committee-trigger-wrapper">
+            <button onclick="toggleCommittee()" class="btn-toggle-committee">
+                👥 CONOCE AL COMITÉ ORGANIZADOR &darr;
+            </button>
+        </div>
+
+        <div id="committee-container" class="committee-container">
+            <button onclick="closeCommittee()" class="close-committee-btn" title="Cerrar">&times;</button>
+            <h3 class="committee-title">Comité Organizador</h3>
+            <p class="committee-subtitle">Nuestro conjunto de profesionales experimentados y de renombre</p>
+
+            <div class="committee-grid">
+                <div class="committee-card">Dr. Juan Manuel Peña Aguilar Director de la DPIyDT</div>
+                <div class="committee-card">Jorge Cervantes Acosta</div>
+                <div class="committee-card">Rolando Gutiérrez López</div>
+                <div class="committee-card">Gerardo Rodríguez de Jesús</div>
+                <div class="committee-card">Héctor López Nicolás</div>
+                <div class="committee-card">Orlando González Montesoro</div>
+                <div class="committee-card">Antonio Salomón Morales Torres</div>
+                <div class="committee-card">Mtro. Jevet Emiliano López Campos</div>
+                <div class="committee-card">Ing. Patricio Santiago Jiménez</div>
+                <div class="committee-card">Ing. Andrea Sarahí López Guerrero</div>
+                <div class="committee-card">Dr. Luis Guadalupe Macías Trejo</div>
+                <div class="committee-card">Mtra. J. Gabriela Suárez Castañón</div>
+                <div class="committee-card">Paulina Angélica Kanchi Ledesma</div>
+                <div class="committee-card">Leticia Vera Reyes</div>
+                <div class="committee-card">Dr. José Manuel Jaime Becerril</div>
+                <div class="committee-card">Asher García Díaz</div>
+                <div class="committee-card">Salvador Ignacio Escobar Villanueva</div>
+                <div class="committee-card">Dr. Marco Antonio Aceves</div>
+                <div class="committee-card">Sheccid Acevedo</div>
+                <div class="committee-card">María Glpe. Vázquez</div>
+            </div>
+
+            <div class="back-to-about-wrapper">
+                <button onclick="closeCommittee()" class="btn-back-up">&uarr; Ocultar Comité Organizador</button>
+            </div>
+        </div>
     </section>
 
-    <!-- SECCIÓN PROGRAMA CON ANIMACIÓN DE FONDO -->
+    <!-- SECCIÓN PROGRAMA INTERACTIVO CON NODOS -->
     <section id="programa" class="program-section">
         <canvas id="canvas-network"></canvas>
+
         <div class="program-content-wrapper">
-            <h2 style="color: #0b1f52; font-weight: 900;">PROGRAMA DEL CONGRESO</h2>
-            <div class="program-card">
-                <img src="RUTA_A_LA_IMAGEN_DE_TU_PROGRAMA.jpg" alt="Programa Códice 5.0" style="width: 100%;">
+            <h2 class="section-title" style="color: #0b1f52;">PROGRAMA DEL CONGRESO</h2>
+            <p class="section-subtitle">Explora la agenda oficial de actividades por día</p>
+
+            <div class="program-main-container">
+                <!-- COLUMNA IZQUIERDA: LÍNEA DE TIEMPO INTERACTIVA POR DÍAS -->
+                <div class="program-timeline-card">
+                    <div class="program-tabs">
+                        <button class="tab-btn active" onclick="switchDay(1)">DÍA 1 (23 SEP)</button>
+                        <button class="tab-btn" onclick="switchDay(2)">DÍA 2 (24 SEP)</button>
+                        <button class="tab-btn" onclick="switchDay(3)">DÍA 3 (25 SEP)</button>
+                    </div>
+
+                    <!-- DÍA 1 -->
+                    <div id="day-1" class="timeline-content active">
+                        <div class="timeline-venue">📍 SEDE: Universidad Tecnológica de Querétaro (UTEQ)</div>
+                        <ul class="timeline-list">
+                            <li><span class="time">09:00 - 09:45</span> <span class="event">Registro de Asistentes</span></li>
+                            <li><span class="time">10:00 - 10:30</span> <span class="event">Ceremonia de Inauguración</span></li>
+                            <li><span class="time">10:30 - 11:30</span> <span class="event"><strong>Conferencia Magistral 1:</strong> Evolución e Implementación de Espacios Inmersivos</span></li>
+                            <li><span class="time">11:30 - 12:00</span> <span class="event">Coffee Break</span></li>
+                            <li><span class="time">12:00 - 14:00</span> <span class="event">Ponencias Simultáneas (Salas 1 a 4)</span></li>
+                            <li><span class="time">14:00 - 15:00</span> <span class="event">Comida</span></li>
+                            <li><span class="time">15:00 - 17:00</span> <span class="event">Concurso y Evaluaciones de Pósters / Ponencias</span></li>
+                            <li><span class="time">16:00 - 20:00</span> <span class="event">Hackathon y Talleres Prácticos Simultáneos</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- DÍA 2 -->
+                    <div id="day-2" class="timeline-content">
+                        <div class="timeline-venue">📍 SEDE: Universidad Anáhuac / UTEQ</div>
+                        <ul class="timeline-list">
+                            <li><span class="time">09:00 - 10:15</span> <span class="event">Registro de Asistentes (Edificio IDEA - Anáhuac)</span></li>
+                            <li><span class="time">10:30 - 11:30</span> <span class="event"><strong>Conferencia Magistral 2:</strong> Centros de Información en la Era de la IA</span></li>
+                            <li><span class="time">11:30 - 12:30</span> <span class="event">Panel de Educación y Tecnología</span></li>
+                            <li><span class="time">12:30 - 13:10</span> <span class="event">Recorrido Universitario por Instalaciones</span></li>
+                            <li><span class="time">13:10 - 14:20</span> <span class="event">Traslado de Asistentes a la UTEQ</span></li>
+                            <li><span class="time">14:20 - 16:00</span> <span class="event">Presentaciones Orales Simultáneas (10 Trabajos)</span></li>
+                            <li><span class="time">16:00 - 20:00</span> <span class="event">Hackathon y Talleres Prácticos (Edificio PIDET)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- DÍA 3 -->
+                    <div id="day-3" class="timeline-content">
+                        <div class="timeline-venue">📍 SEDE: Universidad Tecnológica de Querétaro (UTEQ)</div>
+                        <ul class="timeline-list">
+                            <li><span class="time">09:00 - 11:00</span> <span class="event">Ponencias Simultáneas / Hackathon Final</span></li>
+                            <li><span class="time">11:00 - 12:00</span> <span class="event">Taller Demostrativo de Realidad Aumentada</span></li>
+                            <li><span class="time">12:00 - 15:00</span> <span class="event">Bloque de Ponencias Simultáneas (Salas 1 a 4)</span></li>
+                            <li><span class="time">15:00 - 15:20</span> <span class="event">Traslado al Gimnasio Auditorio UTEQ</span></li>
+                            <li><span class="time">15:20 - 16:20</span> <span class="event"><strong>Conferencia Magistral 3:</strong> Ingeniería Mecánica Aplicada</span></li>
+                            <li><span class="time">16:20 - 16:40</span> <span class="event">Ceremonia de Clausura del Congreso</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- COLUMNA DERECHA: TARJETA DE DESCARGA PROGRAMA COMPLETO -->
+                <div class="program-download-card">
+                    <div class="download-card-body">
+                        <div class="calendar-icon">📅</div>
+                        <h3>Consulta el programa completo por días</h3>
+                        <p>Obtén el documento PDF oficial con el desglose completo de ponencias, salas y ponentes.</p>
+                        <a href="https://drive.google.com/file/d/1qzHlQMXz10K1fach2bjypmcck8Nh_aP7/view?usp=drive_link" target="_blank" class="btn-download-pdf">
+                            VER PROGRAMA COMPLETO &rarr;
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -114,20 +227,20 @@
                 </div>
                 <p>Comparte tu investigación y proyectos académicos o industriales. Consulta la métrica de evaluación y descarga la plantilla de formato extenso.</p>
                 <div class="conv-card-actions">
-                    <a href="LINK_REGISTRO_POSTERS_Y_PRESENTACIONES" target="_blank" class="btn-conv">Registro de Participación &rarr;</a>
-                    <a href="LINK_DESCARGA_TRABAJO_EXTENSO.docx" class="btn-conv-outline">📥 Descargar Formato Extenso</a>
-                    <a href="LINK_METRICAS_POSTERS.pdf" target="_blank" class="btn-conv-outline">📋 Métricas de Evaluación</a>
+                    <a href="https://form.jotform.com/262037484928870" target="_blank" class="btn-conv">Registro de Participación &rarr;</a>
+                    <a href="https://docs.google.com/document/d/1dDajRMqqjQZZLgMYAWobzOf9dfZSCuZL/edit?usp=drive_link&ouid=105906005549265043560&rtpof=true&sd=true" class="btn-conv-outline">📥 Descargar Formato Extenso</a>
+                    <a href="https://drive.google.com/file/d/1tQ00WjjtWRn8QZeZhzFmHopMLGrwWNji/view?usp=drive_link" target="_blank" class="btn-conv-outline">📋 Métricas de Evaluación</a>
                 </div>
             </div>
 
             <div class="conv-card orange">
                 <div class="conv-card-header">
-                    <h3>Hackathon Códice 2026</h3>
+                    <h3>Hackathon CODICE 2026</h3>
                     <span class="conv-card-icon">💻</span>
                 </div>
                 <p>Demuestra tu talento resolviendo retos tecnológicos en tiempo real con impacto en la industria 5.0 y ciberseguridad.</p>
                 <div class="conv-card-actions">
-                    <a href="LINK_FORMULARIO_HACKATHON" target="_blank" class="btn-conv">Formulario de Registro &rarr;</a>
+                    <a href="https://form.jotform.com/262036928262863" target="_blank" class="btn-conv">Formulario de Registro &rarr;</a>
                     <a href="LINK_METRICAS_HACKATHON.pdf" target="_blank" class="btn-conv-outline">📋 Métricas de la Convocatoria</a>
                     <a href="LINK_CARTA_RESPONSIVA_HACKATHON.pdf" download class="btn-conv-outline">📥 Descargar Carta Responsiva</a>
                 </div>
@@ -140,16 +253,18 @@
                 </div>
                 <p>Aprende de manera interactiva con expertos de la industria. Cupo limitado a 20 participantes por taller para garantizar aprendizaje personalizado.</p>
                 <div class="conv-card-actions">
-                    <button onclick="toggleTalleres()" class="btn-conv" style="border:none; cursor:pointer;">Ver los 11 Talleres &darr;</button>
+                    <button onclick="toggleTalleres()" class="btn-conv" style="border:none; cursor:pointer;">Ver los 10 Talleres &darr;</button>
                 </div>
             </div>
         </div>
 
+        <!-- CONTENEDOR DE LOS 10 TALLERES -->
         <div id="workshops-container" class="workshops-container">
             <button onclick="closeTalleres()" class="close-workshops-btn" title="Cerrar talleres">&times;</button>
             <h3 class="workshops-title">Talleres Disponibles (Cupo Máximo 20 por Taller)</h3>
             
             <div class="workshops-grid">
+                <!-- TALLER 1 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -168,6 +283,7 @@
                     </div>
                 </div>
 
+                <!-- TALLER 2 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -185,6 +301,158 @@
                         <a href="LINK_EVENTBRITE_TALLER_2" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
                     </div>
                 </div>
+
+                <!-- TALLER 3 -->
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_3.jpg" alt="Tallerista 3" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Mtro. Alejandro Ruiz</div>
+                                <span class="workshop-badge">Industria 5.0</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Gemelos Digitales con IoT</div>
+                        <div class="workshop-desc">Modelado y simulación de líneas de producción interconectadas en la nube.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_3" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- TALLER 4 -->
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_4.jpg" alt="Tallerista 4" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Dra. Claudia Ramos</div>
+                                <span class="workshop-badge">Cloud Security</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Arquitecturas Zero-Trust en la Nube</div>
+                        <div class="workshop-desc">Implementación práctica de políticas de seguridad Zero-Trust en plataformas multicloud.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_4" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- TALLER 5 -->
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_5.jpg" alt="Tallerista 5" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Ing. Fernando Torres</div>
+                                <span class="workshop-badge">Robótica</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Robótica Colaborativa (Cobots)</div>
+                        <div class="workshop-desc">Programación y seguridad en entornos de interacción hombre-robot en celdas de manufactura.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_5" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- TALLER 6 -->
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_6.jpg" alt="Tallerista 6" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Mtra. Beatriz Méndez</div>
+                                <span class="workshop-badge">Big Data</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Analítica Predictiva en Tiempo Real</div>
+                        <div class="workshop-desc">Uso de sensores industriales para la predicción de fallas en maquinaria pesada.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_6" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- TALLER 7 -->
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_7.jpg" alt="Tallerista 7" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Dr. Gabriel Paredes</div>
+                                <span class="workshop-badge">Ciberseguridad</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Hacking Ético Industrial</div>
+                        <div class="workshop-desc">Auditoría de vulnerabilidades en protocolos de comunicación de fábrica.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_7" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- TALLER 8 -->
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_8.jpg" alt="Tallerista 8" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Ing. Mariana Ortiz</div>
+                                <span class="workshop-badge">Entornos Digitales</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Diseño de Interfaces HMI Human-Centered</div>
+                        <div class="workshop-desc">Principios UX/UI aplicados a paneles de control e interfaces industriales operativas.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_8" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- TALLER 9 -->
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_9.jpg" alt="Tallerista 9" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Mtro. Daniel Salgado</div>
+                                <span class="workshop-badge">Edge Computing</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Despliegue de Algoritmos en Edge Devices</div>
+                        <div class="workshop-desc">Procesamiento de visión artificial directamente en microcontroladores y dispositivos locales.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_9" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- TALLER 10 -->
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <img src="RUTA_FOTO_TALLERISTA_10.jpg" alt="Tallerista 10" class="workshop-img">
+                            <div>
+                                <div class="workshop-author-name">Dra. Patricia Vega</div>
+                                <span class="workshop-badge">Sostenibilidad</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Eficiencia Energética en Planta con IoT</div>
+                        <div class="workshop-desc">Monitoreo y optimización del consumo eléctrico industrial mediante sensórica avanzada.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="LINK_EVENTBRITE_TALLER_10" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                    </div>
+                </div>
             </div>
 
             <div class="back-to-convocatoria-wrapper">
@@ -200,7 +468,7 @@
 
         <div class="sedes-grid">
             <div class="sede-card">
-                <img src="RUTA_A_FOTO_UTEQ.jpg" alt="Universidad Tecnológica de Querétaro" class="sede-image">
+                <img src="galeria/sedeUteq.png" alt="Universidad Tecnológica de Querétaro" class="sede-image">
                 <div class="sede-content">
                     <div>
                         <span class="sede-tag">SEDE PRINCIPAL</span>
@@ -215,7 +483,7 @@
             </div>
 
             <div class="sede-card">
-                <img src="RUTA_A_FOTO_ANAHUAC.jpg" alt="Universidad Anáhuac Querétaro" class="sede-image">
+                <img src="galeria/sedeAnahuac.png" alt="Universidad Anáhuac Querétaro" class="sede-image">
                 <div class="sede-content">
                     <div>
                         <span class="sede-tag">SEDE SECUNDARIA</span>
@@ -233,20 +501,18 @@
 
     <!-- FRANJA BLANCA PARA IMAGEN ÚNICA DE LOGOS -->
     <div class="logos-strip">
-        <img src="RUTA_A_TU_IMAGEN_DE_LOGOS.png" alt="Logos Institucionales">
+        <img src="galeria/logosInst.png" alt="Logos Institucionales">
     </div>
 
     <!-- FOOTER Y CONTACTO -->
     <footer id="contacto" class="footer-section">
         <div class="footer-grid">
-            <!-- COLUMNA 1: MARCA Y ORGANIZADOR -->
             <div class="footer-brand">
-                <img src="RUTA_A_TU_LOGO_PRINCIPAL.png" alt="Códice 5.0" class="footer-logo">
+                <img src="galeria/logoWhite.png" alt="Códice 5.0" class="footer-logo">
                 <p>1er Congreso Internacional de Operaciones (OT), Datos, Inteligencia, Ciberseguridad y Entornos Digitales.</p>
                 <p class="footer-organizer">Organizado por la Universidad Tecnológica de Querétaro</p>
             </div>
 
-            <!-- COLUMNA 2: NAVEGACIÓN -->
             <div class="footer-col">
                 <h4>Navegación</h4>
                 <ul class="footer-links">
@@ -258,7 +524,6 @@
                 </ul>
             </div>
 
-            <!-- COLUMNA 3: INFORMACIÓN DE CONTACTO -->
             <div class="footer-col">
                 <h4>Información</h4>
                 <ul class="contact-info-list">
@@ -278,7 +543,6 @@
             </div>
         </div>
 
-        <!-- BARRA INFERIOR -->
         <div class="footer-bottom">
             <div>© 2026 CÓDICE 5.0. Todos los derechos reservados.</div>
             <div>
@@ -287,7 +551,6 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
     <script src="script.js"></script>
 </body>
 </html>

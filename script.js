@@ -1,3 +1,19 @@
+// --- LÓGICA DEL MENÚ HAMBURGUESA ---
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+
+if (menuToggle && navbar) {
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+}
+
+function closeMenu() {
+    if (navbar && navbar.classList.contains('active')) {
+        navbar.classList.remove('active');
+    }
+}
+
 // --- CONTADOR ---
 const eventDate = new Date("September 23, 2026 09:00:00").getTime();
 const updateCountdown = () => {
@@ -29,13 +45,63 @@ const descriptions = {
     ind5: { title: "Industria 5.0", text: "Colaboración hombre-robótica y sostenibilidad." }
 };
 
+let activeTopicKey = null;
+
 function showDescription(key, element) {
-    document.querySelectorAll('.topic-card').forEach(card => card.classList.remove('active'));
-    element.classList.add('active');
     const box = document.getElementById('description-box');
+
+    // Si se vuelve a presionar la misma temática que ya está activa, se cierra
+    if (activeTopicKey === key) {
+        closeDescription();
+        return;
+    }
+
+    // Remueve la clase activa de las demás tarjetas
+    document.querySelectorAll('.topic-card').forEach(card => card.classList.remove('active'));
+    
+    // Activa la tarjeta seleccionada
+    element.classList.add('active');
+    activeTopicKey = key;
+
+    // Asigna el texto y muestra la caja
     document.getElementById('desc-title').innerText = descriptions[key].title;
     document.getElementById('desc-text').innerText = descriptions[key].text;
     box.style.display = 'block';
+}
+
+function closeDescription() {
+    const box = document.getElementById('description-box');
+    box.style.display = 'none';
+    
+    // Quita la selección de todas las tarjetas
+    document.querySelectorAll('.topic-card').forEach(card => card.classList.remove('active'));
+    activeTopicKey = null;
+}
+
+// --- CONTROL DE VISTA COMITÉ ORGANIZADOR ---
+function toggleCommittee() {
+    const container = document.getElementById('committee-container');
+    if (container.style.display === 'block') {
+        closeCommittee();
+    } else {
+        container.style.display = 'block';
+        container.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function closeCommittee() {
+    const container = document.getElementById('committee-container');
+    container.style.display = 'none';
+    document.getElementById('sobre-codice').scrollIntoView({ behavior: 'smooth' });
+}
+
+// --- CAMBIAR PESTAÑAS DE DÍAS EN EL PROGRAMA ---
+function switchDay(dayNumber) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.timeline-content').forEach(content => content.classList.remove('active'));
+
+    document.querySelectorAll('.tab-btn')[dayNumber - 1].classList.add('active');
+    document.getElementById(`day-${dayNumber}`).classList.add('active');
 }
 
 // --- CONTROL DE TALLERES ---
