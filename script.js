@@ -37,12 +37,12 @@ updateCountdown();
 
 // --- TEMÁTICAS ---
 const descriptions = {
-    ia: { title: "Inteligencia Artificial", text: "Integración de Machine Learning y automatización avanzada." },
-    ot: { title: "Operaciones (OT)", text: "Supervisión de sistemas SCADA y redes industriales." },
-    datos: { title: "Datos", text: "Estrategias de Big Data y analítica en tiempo real." },
-    ciber: { title: "Ciberseguridad", text: "Protección de infraestructuras críticas." },
-    entornos: { title: "Entornos Digitales", text: "Modelos Cloud/Edge Computing." },
-    ind5: { title: "Industria 5.0", text: "Colaboración hombre-robótica y sostenibilidad." }
+    ia: { title: "Inteligencia Artificial", text: "Explora la integración de modelos generativos, aprendizaje automático, visión por computadora y algoritmos avanzados aplicados a la optimización de procesos y toma de decisiones inteligentes." },
+    ot: { title: "Operaciones (OT)", text: "Enfocado en la tecnología de operaciones, automatización industrial, control de procesos, robótica y la convergencia entre los sistemas IT y OT para entornos productivos de alta eficiencia." },
+    datos: { title: "Datos", text: "Explora sobre la ciencia de datos, arquitectura Big Data, gobierno de datos y analítica en tiempo real para transformar grandes volúmenes de información en conocimiento estratégico." },
+    ciber: { title: "Ciberseguridad", text: "Estrategias de protección de infraestructuras críticas, resiliencia digital, mitigación de riesgos, seguridad en la nube y privacidad de la información en la era 5.0." },
+    entornos: { title: "Entornos Digitales", text: "Desarrollo e integración de tecnologías emergentes, IoT (Internet de las Cosas), plataformas en la nube, gemelos digitales y sistemas interconectados para la transformación digital." },
+    ind5: { title: "Industria 5.0", text: "Enfoque en la colaboración entre humanos y tecnología, desarrollo sostenible, personalización de procesos, eficiencia energética y resiliencia industrial centrada en el ser humano." }
 };
 
 let activeTopicKey = null;
