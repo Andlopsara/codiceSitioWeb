@@ -126,7 +126,7 @@ const canvas = document.getElementById("canvas-network");
 const ctx = canvas.getContext("2d");
 
 let particlesArray = [];
-const numberOfParticles = 45;
+const numberOfParticles = 70;
 
 function resizeCanvas() {
     canvas.width = canvas.parentElement.offsetWidth;
