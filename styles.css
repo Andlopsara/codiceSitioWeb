@@ -238,6 +238,235 @@ body { background-color: #ffffff; color: #333; }
     padding-top: 20px;
 }
 
+/* --- SECCIÓN CONFERENCISTAS MAGISTRALES Y PANEL --- */
+.conferencistas-section {
+    padding: 80px 8%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.conferencistas-header {
+    margin-bottom: 40px;
+}
+
+.conferencistas-header h2 {
+    font-size: 1.8rem;
+    color: #0b1f52;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #f28b00;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Grid para los 3 Magistrales */
+.conferencistas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.conferencista-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.conferencista-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(11, 31, 82, 0.12);
+}
+
+.conferencista-img-wrapper {
+    background-color: #e2e8f0;
+    height: 240px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.conferencista-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    object-position: center 30%;
+}
+
+.conferencista-content {
+    padding: 25px 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conf-badge {
+    background-color: #f28b00;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.conferencista-name {
+    font-size: 1.2rem;
+    color: #0b1f52;
+    font-weight: 800;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.conferencista-affiliation {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.conf-email {
+    font-size: 0.75rem;
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.conf-email:hover {
+    text-decoration: underline;
+}
+
+.conferencista-details {
+    margin-top: auto;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+}
+
+.conf-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.conf-meta, .conf-theme {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 5px;
+}
+
+/* Tarjeta Especial del Panel */
+.panel-special-card {
+    background: linear-gradient(135deg, #f8fafc, #edf2f7);
+    border-radius: 16px;
+    padding: 35px 30px;
+    border: 1px solid #cbd5e1;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.panel-badge {
+    background-color: #0b1f52;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.panel-title {
+    font-size: 1.3rem;
+    color: #0b1f52;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.panel-subtitle {
+    font-size: 0.95rem;
+    color: #f28b00;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.panel-meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.8rem;
+    color: #475569;
+    font-weight: 600;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.panelists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.panelist-item {
+    background: #ffffff;
+    padding: 20px 15px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.panelist-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #f28b00;
+    margin-bottom: 12px;
+}
+
+.panelist-item h4 {
+    font-size: 0.88rem;
+    color: #0b1f52;
+    font-weight: 800;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.panelist-item p {
+    font-size: 0.72rem;
+    color: #64748b;
+    line-height: 1.3;
+}
+
 /* --- ESTILOS PROGRAMA CON TIMELINE Y TARJETA PDF --- */
 .program-section {
     position: relative;
@@ -759,6 +988,15 @@ body { background-color: #ffffff; color: #333; }
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+
+    .conferencistas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-meta-info {
+        flex-direction: column;
+        gap: 5px;
     }
 }
 
