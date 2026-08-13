@@ -61,7 +61,7 @@ body { background-color: #ffffff; color: #333; }
 
 /* --- SOBRE CÓDICE Y TEMÁTICAS --- */
 .about-section { background-color: #ffffff; padding: 0 8% 60px 8%; }
-.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 50px; }
+.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 50px; text-align: justify;}
 .about-text h2 { font-size: 2.2rem; color: #0b1f52; font-weight: 900; margin-bottom: 20px; }
 .about-text h2 span { color: #f28b00; }
 .about-text p { font-size: 0.95rem; line-height: 1.7; color: #555; }
