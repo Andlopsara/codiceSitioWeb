@@ -714,16 +714,25 @@ body { background-color: #ffffff; color: #333; }
 /* --- FRANJA BLANCA PARA LOGOS ORGANIZADORES --- */
 .logos-strip {
     background-color: #ffffff;
-    padding: 10px 8%;
+    padding: 20px 15px;
     text-align: center;
     border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .logos-strip img {
-    max-width: 500%;
+    max-width: 100%;
     height: auto;
     max-height: 80px;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 /* --- SECCIÓN CONTACTO Y FOOTER --- */
