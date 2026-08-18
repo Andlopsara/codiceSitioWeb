@@ -714,25 +714,16 @@ body { background-color: #ffffff; color: #333; }
 /* --- FRANJA BLANCA PARA LOGOS ORGANIZADORES --- */
 .logos-strip {
     background-color: #ffffff;
-    padding: 20px 15px;
+    padding: 10px 8%;
     text-align: center;
     border-top: 1px solid #e2e8f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 100vw;
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
 .logos-strip img {
-    max-width: 20%;
+    max-width: 500%;
     height: auto;
-    max-height: 20px;
+    max-height: 80px;
     object-fit: contain;
-    display: block;
-    margin: 0 auto;
 }
 
 /* --- SECCIÓN CONTACTO Y FOOTER --- */
@@ -866,42 +857,171 @@ body { background-color: #ffffff; color: #333; }
 /* ==========================================
    REGLAS RESPONSIVAS (MEDIA QUERIES)
    ========================================== */
-/* --- MEDIA QUERIES RESPONSIVAS --- */
-img, svg, video {
-    max-width: 100% !important;
-    height: auto !important;
-}
 
-/* 2. Corrige la franja de logos específicamente */
-.logos-strip {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 15px 10px !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-}
-
-.logos-strip img {
-    max-width: 100% !important;
-    width: 100% !important;
-    object-fit: contain !important;
-}
-
-/* 3. Evita el scroll hacia los lados en móviles de forma estricta */
-@media (max-width: 768px) {
-    html, body {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-        position: relative !important;
+/* TABLETS Y PANTALLAS MEDIANAS (Hasta 1024px) */
+@media (max-width: 1024px) {
+    .header {
+        padding: 15px 5%;
     }
 
-    .sedes-grid, 
-    .footer-grid, 
-    .about-container, 
-    .hero-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sedes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sede-card {
+        flex-direction: column;
+    }
+
+    .sede-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .sede-content {
+        width: 100%;
+    }
+}
+
+/* MENÚ HAMBURGUESA Y ADAPTACIONES PARA DISPOSITIVOS MÓVILES (Hasta 850px) */
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: block; /* MUESTRA LAS 3 LÍNEAS */
+    }
+
+    .navbar {
+        display: none; /* OCULTA EL MENÚ DE TEXTO CONTINUO */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+
+    .navbar.active {
+        display: block; /* SE MUESTRA AL HACER CLIC EN LAS 3 LÍNEAS */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* AJUSTE ESCALA HERO EN MÓVIL */
+    .hero-section {
+        min-height: auto;
+        padding: 35px 5% 45px 5%;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .badge-title {
+        font-size: 0.95rem;
+    }
+
+    .hero-logo {
+        max-width: 240px;
+    }
+
+    .event-date-block {
+        margin-bottom: 20px;
+        padding-left: 10px;
+    }
+
+    .date-details .date-days {
+        font-size: 1.1rem;
+    }
+
+    .date-details .date-month-location {
+        font-size: 0.75rem;
+    }
+
+    /* CONTADOR HORIZONTAL MÁS PEQUEÑO Y PROPORCIONAL */
+    .countdown-wrapper {
+        margin-top: -25px;
+        padding: 0 10px;
+    }
+
+    .countdown-card {
+        padding: 12px 15px;
+    }
+
+    .countdown-title {
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+    }
+
+    .countdown-grid {
+        display: flex;
+        justify-content: space-around;
+        gap: 5px;
+    }
+
+    .countdown-number {
+        font-size: 1.3rem;
+    }
+
+    .countdown-label {
+        font-size: 0.55rem;
+    }
+
+    .program-main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .conferencistas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-meta-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* TELÉFONOS MÓVILES PEQUEÑOS (Hasta 576px) */
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .program-tabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tab-btn {
+        width: 100%;
+    }
+
+    .timeline-list li {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .convocatoria-grid {
+        grid-template-columns: 1fr;
     }
 }
