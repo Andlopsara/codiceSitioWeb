@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <title>Códice 5.0 - Congreso Internacional</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajuste de alineación para la imagen del logo de WhatsApp dentro de la lista de contacto */
+        .contact-item img.icon-ws {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR -->
     <header class="header">
         <div class="logo-container">
             <a href="#" onclick="closeMenu()">
@@ -16,7 +28,6 @@
             </a>
         </div>
         
-        <!-- (MÓVIL) -->
         <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
             ☰
         </button>
@@ -34,7 +45,6 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero-section">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="galeria/videoF2.mp4" type="video/mp4">
@@ -42,7 +52,7 @@
         <div class="hero-content">
             <span class="badge-title">1ER CONGRESO INTERNACIONAL</span>
             <img src="galeria/logoWhite.png" alt="Codice 5.0" class="hero-logo">
-            <p class="hero-subtitle">DE OPERACIONES (OT), INTELIGENCIA, DATOS, CIBERSEGURIDAD Y ENTORNOS DIGITALES</p>
+            <p class="hero-subtitle">DE OPERACIONES (OT), DATOS, INTELIGENCIA, CIBERSEGURIDAD Y ENTORNOS DIGITALES</p>
             <div class="event-date-block">
                 <div class="date-icon">📅</div>
                 <div class="date-details">
@@ -51,13 +61,12 @@
                 </div>
             </div>
             <div class="hero-buttons">
-                <a href="#convocatoria" class="btn btn-primary">REGÍSTRATE AHORA &rarr;</a>
-                <a href="#programa" class="btn btn-secondary">VER PROGRAMA &rarr;</a>
+                <a href="#convocatoria" class="btn btn-primary">REGÍSTRATE AHORA →</a>
+                <a href="#programa" class="btn btn-secondary">VER PROGRAMA →</a>
             </div>
         </div>
     </section>
 
-    <!-- SOBRE CÓDICE Y CONTADOR -->
     <section id="sobre-codice" class="about-section">
         <div class="countdown-wrapper">
             <div class="countdown-card">
@@ -76,7 +85,9 @@
                 <h2>¿QUÉ ES<br><span>CODICE?</span></h2>
                 <p><strong>Es el  1er Congreso Internacional de Operaciones (OT), Datos, Inteligencia, 
                     Ciberseguridad y Entornos Digitales 5.0 (CODICE 2026) impulsado
-                    por la Universidad Tecnológica de Querétaro (UTEQ) en colaboración con la Universidad Anáhuac Querétaro y la Universidad Internacional de La Rioja en México (UNIR México).</strong> <br> 
+                    por la Universidad Tecnológica de Querétaro (UTEQ) en colaboración con la Universidad Anáhuac Querétaro, 
+                    la Universidad Internacional de La Rioja en México (UNIR México) y
+                    la Escuela Nacional de Estudios Superiores Unidad Juriquilla UNAM, Querétaro (ENES Juriquilla). </strong> <br> 
                     No es solo un congreso, es un punto de encuentro académico, tecnológico e interdisciplinario, un puente entre la academia, la industria y la sociedad. Promovemos el desarrollo de talento altamente 
                     capacitado para afrontar los desafíos de la transformación digital,
                     la eficiencia operativa y el desarrollo tecnológico sostenible.  
@@ -100,119 +111,144 @@
             <div class="topic-card" onclick="showDescription('ind5', this)"><span class="topic-icon">🦾</span><div class="topic-name">Industria 5.0</div></div>
         </div>
         <div id="description-box" class="topic-description-box">
-            <button class="close-topic-btn" onclick="closeDescription()" title="Cerrar">&times;</button>
+            <button class="close-topic-btn" onclick="closeDescription()" title="Cerrar">×</button>
             <h4 id="desc-title">Título</h4>
             <p id="desc-text">Texto de descripción...</p>
         </div>
 
-        <!-- BOTÓN Y DESPLIEGUE DEL COMITÉ ORGANIZADOR -->
         <div class="committee-trigger-wrapper">
             <button onclick="toggleCommittee()" class="btn-toggle-committee">
-                👥 CONOCE AL COMITÉ ORGANIZADOR &darr;
+                👥 CONOCE AL COMITÉ ORGANIZADOR ↓
             </button>
         </div>
 
         <div id="committee-container" class="committee-container">
-            <button onclick="closeCommittee()" class="close-committee-btn" title="Cerrar">&times;</button>
+            <button onclick="closeCommittee()" class="close-committee-btn" title="Cerrar">×</button>
             <h3 class="committee-title">Comité Organizador</h3>
             <p class="committee-subtitle">Nuestro conjunto de profesionales experimentados y de renombre</p>
 
             <div class="committee-grid">
                 <div class="committee-card">
-                    <strong>Luis Fernando Pantoja Amaro</strong>
-                    <span class="committee-role">Rector Universidad Tecnológica de Querétaro (UTEQ)</span>
+                    <strong>Dr. Luis Fernando Pantoja Amaro</strong>
+                    <span class="committee-role">Rector Universidad Tecnológica de Querétaro (UTEQ).</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. Luis Eduardo Alverde Montemayor</strong>
+                    <span class="committee-role">Rector de la Universidad Anáhuac Querétaro.</span>
+                </div>
+                 <div class="committee-card">
+                    <strong>Dr. Enrique Arturo Cantoral Uriza</strong>
+                    <span class="committee-role">Director de la ENES Juriquilla, UNAM Querétaro</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. Francisco David Mejía Rodríguez</strong>
+                    <span class="committee-role"> Rector de la Universidad Internacional de La Rioja en México (UNIR México</span>
                 </div>
                 <div class="committee-card">
                     <strong>Dr. Juan Manuel Peña Aguilar</strong>
-                    <span class="committee-role">Director de la DPIyDT, UTEQ</span>
-                </div>
-                <div class="committee-card">
-                    <strong>M.G.P Jorge Cervantes Acosta</strong>
-                    <span class="committee-role">Director de la División Industrial</span>
+                    <span class="committee-role">Presidente del Comité Organizador CODICE 2026.</span>
                 </div>
                 <div class="committee-card">
                     <strong>Dr. Salvador Ignacio Escobar Villanueva</strong>
-                    <span class="committee-role">Director en Universidad Anáhuac Querétaro </span>
+                    <span class="committee-role">Coordinador General y Enlace Institucional del Congreso CODICE 2026.</span>
+                </div>
+                
+                <div class="committee-card">
+                    <strong>M.G.P Jorge Cervantes Acosta</strong>
+                    <span class="committee-role">Vicepresidente del Comité Organizador CODICE 2026.</span>
                 </div>
                 <div class="committee-card">
                     <strong>Dr. Marco Antonio Aceves</strong>
-                    <span class="committee-role">Director de AMESE</span>
+                    <span class="committee-role">Líder de la Comisión de Ponencias.</span>
                 </div> 
                 <div class="committee-card">
                     <strong>Ing. Héctor López Nicolás</strong>
-                    <span class="committee-role">Profesor de Asignatura</span>
+                    <span class="committee-role">Líder de la Comisión de Talleres y Hackathon.</span>
                 </div>
                 <div class="committee-card">
                     <strong>I.Q. Orlando González Montesoro</strong>
-                    <span class="committee-role">Profesor de Tiempo Completo Asociado A (PTC A)</span>
+                    <span class="committee-role">Coordinador Principal de Evaluación y Jueces.</span>
                 </div>
                 <div class="committee-card">
                     <strong>M. en C. Antonio Salomón Morales Torres</strong>
-                    <span class="committee-role">Profesor de Tiempo Completo Asociado A (PTC A)</span>
+                    <span class="committee-role">Co-Coordinador Principal de Evaluación de Presentaciones Orales, Jueces y Ponencias.</span>
                 </div>
                 <div class="committee-card">
                     <strong>Ing. Gerardo Rodríguez de Jesús</strong>
-                    <span class="committee-role">Profesor de Tiempo Completo Asociado A (PTC A)</span>
+                    <span class="committee-role">Líder de la Comisión de Logística y Programa  </span>
                 </div>
                 <div class="committee-card">
                     <strong>Ing. Patricio Santiago Jiménez</strong>
-                    <span class="committee-role">Laboratorista del Laboratorio de Realidad Aumentada GE Vernova</span>
+                    <span class="committee-role">Líder de la Comisión de Cotizaciones, Protocolo, Inauguración y Clausura. </span>
                 </div>
                 <div class="committee-card">
                     <strong>Ing. Andrea Sarahí López Guerrero</strong>
-                    <span class="committee-role">Laboratorista de Aulas digitales SIEMENS</span>
+                    <span class="committee-role">Coordinadora de Logística, Programa  y sitio web de CODICE 2026.</span>
                 </div>
                 <div class="committee-card">
                     <strong>Mtro. Jevet Emiliano López Campos</strong>
-                    <span class="committee-role">Laboratorista del Laboratorio de Realidad Aumentada GE Vernova</span>
+                    <span class="committee-role">Líder de la Comisión de Registro de asistentes.</span>
                 </div>
                 <div class="committee-card">
                     <strong>Dr. Luis Guadalupe Macías Trejo</strong>
-                    <span class="committee-role">Coordinador de Posgrado de la DPIyDT, UTEQ</span>
+                    <span class="committee-role">Coordinador Principal de Vinculación e Invitaciones</span>
                 </div>
                 <div class="committee-card">
                     <strong>Mtra. J. Gabriela Suárez Castañón</strong>
-                    <span class="committee-role">Coordinadora Administrativa  de Gestión de Proyectos  y  Capacidades de la DPIyDT, UTEQ.</span>
+                    <span class="committee-role">Co-Coordinadora Principal de Vinculación</span>
                 </div>
                 <div class="committee-card">
                     <strong>Lic. Paulina Angélica Kanchi Ledesma</strong>
-                    <span class="committee-role">Finanzas de la DPIyDT, UTEQ</span>
+                    <span class="committee-role">Líder del comité de Finanzas</span>
                 </div>
                 <div class="committee-card">
                     <strong>Mtra. Leticia Vera Reyes</strong>
-                    <span class="committee-role">Coordinadora de Talentos Académicos, UTEQ</span>
+                    <span class="committee-role">Líder de la Comisión de jueces del Concurso de Posters y Hackathon</span>
                 </div>
                 <div class="committee-card">
                     <strong>Dr. José Manuel Jaime Becerril</strong>
-                    <span class="committee-role">Coordinador de los espacios PIDET de la DPIyDT, UTEQ</span>
+                    <span class="committee-role">Coordinador Principal de Espacios para el Congreso y Soporte Técnico</span>
                 </div>
                 <div class="committee-card">
                     <strong>Lic. Asher García Díaz</strong>
-                    <span class="committee-role">Coordinador de CIC de la DPIyDT, UTEQ</span>
+                    <span class="committee-role">Coordinador Principal de Invitaciones a la Industria e Imagen/Difusión</span>
                 </div>
                 <div class="committee-card">
                     <strong>Ing. Esmeralda Vázquez García</strong>
-                    <span class="committee-role">Desarrollo de plataformas web de la DPIyDT, UTEQ</span>
+                    <span class="committee-role">Co-coordinadora de los asistentes Y registrosde CODICE 2026</span>
                 </div>
                 <div class="committee-card">
                     <strong>M. en E. Rolando Gutiérrez López</strong>
-                    <span class="committee-role">Profesor de Tiempo Completo Asociado A (PTC A)</span>
+                    <span class="committee-role">Coordinador Principal de Jóvenes y Transporte</span>
                 </div>
                 <div class="committee-card">
                     <strong>Sheccid Acevedo</strong>
+                    <span class="committee-role">Coordinadora de Conferencia y Panel Sede Anahuac de CODICE 2026</span>
                 </div>
                 <div class="committee-card">
                     <strong>María Glpe. Vázquez</strong>
+                    <span class="committee-role">Coordinadora del Recorrido Anáhuac de CODICE 2026</span>
                 </div> 
-            </div>
+                <div class="committee-card">
+                    <strong>Universidad Anáhuac Querétaro.</strong>
+                    <span class="committee-role">Colaborador Institucional del Congreso CODICE 2026.</span>
+                </div> 
+                <div class="committee-card">
+                    <strong>Universidad Internacional de La Rioja en México (UNIR México).</strong>
+                    <span class="committee-role">Colaborador Institucional del Congreso CODICE 2026.</span>
+                </div> 
+                 <div class="committee-card">
+                    <strong>Escuela Nacional de Estudios Superiores Unidad Juriquilla UNAM , Querétaro (ENES Juriquilla).</strong>
+                    <span class="committee-role">Colaborador Institucional del Congreso CODICE 2026.</span>
+                </div> 
+            </div> 
 
             <div class="back-to-about-wrapper">
-                <button onclick="closeCommittee()" class="btn-back-up">&uarr; Ocultar Comité Organizador</button>
+                <button onclick="closeCommittee()" class="btn-back-up">↑ Ocultar Comité Organizador</button>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN CONFERENCISTAS MAGISTRALES Y PANEL -->
     <section id="conferencistas" class="conferencistas-section">
         <div class="conferencistas-header">
             <h2>CONFERENCISTAS MAGISTRALES</h2>
@@ -220,7 +256,6 @@
         </div>
 
         <div class="conferencistas-grid">
-            <!-- CONFERENCIA MAGISTRAL 1 -->
             <div class="conferencista-card">
                 <div class="conferencista-img-wrapper">
                     <img src="galeria/conferencia1.png" alt="Juan Antonio Asencio Armenta" onerror="this.src='https://via.placeholder.com/300x250/e2e8f0/0b1f52?text=Juan+Antonio+Asencio'">
@@ -237,7 +272,6 @@
                 </div>
             </div>
 
-            <!-- CONFERENCIA MAGISTRAL 2 -->
             <div class="conferencista-card">
                 <div class="conferencista-img-wrapper">
                     <img src="galeria/conferencia2.png" alt="Dr. Jairo Buitrago Ciro" onerror="this.src='https://via.placeholder.com/300x250/e2e8f0/0b1f52?text=Dr.+Jairo+Buitrago'">
@@ -255,7 +289,6 @@
                 </div>
             </div>
 
-            <!-- CONFERENCIA MAGISTRAL 3 -->
             <div class="conferencista-card">
                 <div class="conferencista-img-wrapper">
                     <img src="galeria/conferencia3.png" alt="Dr. Edgar Adrián Franco Urquiza" onerror="this.src='https://via.placeholder.com/300x250/e2e8f0/0b1f52?text=Dr.+Edgar+Franco'">
@@ -273,7 +306,6 @@
             </div>
         </div>
 
-        <!-- TARJETA DEL PANEL DE EDUCACIÓN Y TECNOLOGÍA -->
         <div class="panel-special-card">
             <div class="panel-header-info">
                 <span class="panel-badge">📍 SEDE: Universidad Anáhuac Querétaro (Edificio IDEA)</span>
@@ -310,7 +342,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN PROGRAMA INTERACTIVO CON NODOS -->
     <section id="programa" class="program-section">
         <canvas id="canvas-network"></canvas>
 
@@ -319,7 +350,6 @@
             <p class="section-subtitle">Explora la agenda oficial de actividades por día</p>
 
             <div class="program-main-container">
-                <!-- COLUMNA IZQUIERDA: LÍNEA DE TIEMPO INTERACTIVA POR DÍAS -->
                 <div class="program-timeline-card">
                     <div class="program-tabs">
                         <button class="tab-btn active" onclick="switchDay(1)">DÍA 1 (23 SEP)</button>
@@ -327,13 +357,12 @@
                         <button class="tab-btn" onclick="switchDay(3)">DÍA 3 (25 SEP)</button>
                     </div>
 
-                    <!-- DÍA 1 -->
                     <div id="day-1" class="timeline-content active">
                         <div class="timeline-venue">📍 SEDE: Universidad Tecnológica de Querétaro (UTEQ)</div>
                         <ul class="timeline-list">
                             <li><span class="time">09:00 - 09:45</span> <span class="event">Registro de Asistentes</span></li>
                             <li><span class="time">10:00 - 10:30</span> <span class="event">Ceremonia de Inauguración</span></li>
-                            <li><span class="time">10:30 - 11:30</span> <span class="event"><strong>Conferencia Magistral 1:</strong> Evolución e Implementación de Espacios Inmersivos de Alto Rendimiento: Un Modelo de Triple Hélice para la Innovación Educativa en la UTEQ</span></li>
+                            <li><span class="time">10:30 - 11:30</span> <span class="event"><strong>Conferencia Magistral 1:</strong> Evolución e Implementación de Espacios Inmersivos de Alto Rendimiento: Un Modelo de Triple Hélice para la Innovación Educativa en la UTEQ.</span></li>
                             <li><span class="time">11:30 - 12:00</span> <span class="event">Coffee Break</span></li>
                             <li><span class="time">12:00 - 14:00</span> <span class="event">Ponencias Simultáneas</span></li>
                             <li><span class="time">14:00 - 15:00</span> <span class="event">Comida</span></li>
@@ -342,12 +371,11 @@
                         </ul>
                     </div>
 
-                    <!-- DÍA 2 -->
                     <div id="day-2" class="timeline-content">
                         <div class="timeline-venue">📍 SEDE: Universidad Anáhuac Querétaro / UTEQ </div>
                         <ul class="timeline-list">
                             <li><span class="time">09:00 - 10:15</span> <span class="event">Registro de Asistentes</span></li>
-                            <li><span class="time">10:30 - 11:30</span> <span class="event"><strong>Conferencia Magistral 2:</strong> Centros de Información en la Era de la IA</span></li>
+                            <li><span class="time">10:30 - 11:30</span> <span class="event"><strong>Conferencia Magistral 2:</strong>Consultor en Inteligencia Artificial aplicada a la educación y comunicación científica.</span></li>
                             <li><span class="time">11:30 - 12:30</span> <span class="event">Panel de Educación y Tecnología</span></li>
                             <li><span class="time">12:30 - 13:10</span> <span class="event">Recorrido Universitario por Instalaciones</span></li>
                             <li><span class="time">13:10 - 14:20</span> <span class="event">Traslado de Asistentes a la UTEQ</span></li>
@@ -356,7 +384,6 @@
                         </ul>
                     </div>
 
-                    <!-- DÍA 3 -->
                     <div id="day-3" class="timeline-content">
                         <div class="timeline-venue">📍 SEDE: Universidad Tecnológica de Querétaro (UTEQ)</div>
                         <ul class="timeline-list">
@@ -365,20 +392,19 @@
                             <li><span class="time">12:00 - 13:00</span> <span class="event">Premiación Hackathon: Challenge de Diseño</span></li>
                             <li><span class="time">12:00 - 15:00</span> <span class="event">Bloque de Ponencias Simultáneas</span></li>
                             <li><span class="time">15:00 - 15:20</span> <span class="event">Traslado al Gimnasio Auditorio UTEQ</span></li>
-                            <li><span class="time">15:20 - 16:20</span> <span class="event"><strong>Conferencia Magistral 3:</strong> Ingeniería Mecánica Aplicada</span></li>
+                            <li><span class="time">15:20 - 16:20</span> <span class="event"><strong>Conferencia Magistral 3:</strong>De los residuos a materiales de ingeniería de alto valor: Cómo la ingeniería de materiales circulares está transformando la industria manufacturera.</span></li>
                             <li><span class="time">16:20 - 16:40</span> <span class="event">Ceremonia de Clausura del Congreso</span></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- COLUMNA DERECHA: TARJETA DE DESCARGA PROGRAMA COMPLETO -->
                 <div class="program-download-card">
                     <div class="download-card-body">
                         <div class="calendar-icon">📅</div>
                         <h3>Consulta el programa completo por días</h3>
                         <p>Obtén el documento PDF oficial con el desglose completo de ponencias, salas y ponentes.</p>
-                        <a href="https://drive.google.com/file/d/1nf2WCB9M6iJ5NHVnpa8NPMo-LZ14U2zy/view?usp=drive_link" target="_blank" class="btn-download-pdf">
-                            VER PROGRAMA COMPLETO &rarr;
+                        <a href="https://drive.google.com/file/d/1nf2WCB9M6iJ5NHVnpa8NPMo-LZ14U2zy/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download-pdf">
+                            VER PROGRAMA COMPLETO →
                         </a>
                     </div>
                 </div>
@@ -386,7 +412,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CONVOCATORIA -->
     <section id="convocatoria" class="convocatoria-section">
         <h2 class="section-title">CONVOCATORIA</h2>
         <p class="section-subtitle">Explora nuestras modalidades de participación, consulta los lineamientos e inscribe tu proyecto en el evento.</p>
@@ -399,9 +424,9 @@
                 </div>
                 <p>Divulga tus hallazgos científicos y proyectos de innovación aplicada. Accede a las guías de evaluación y descarga la plantilla oficial para el envío de ponencias en formato extenso.</p>
                 <div class="conv-card-actions">
-                    <a href="https://form.jotform.com/262037484928870" target="_blank" class="btn-conv">Registro de Participación &rarr;</a>
-                    <a href="https://docs.google.com/document/d/1dDajRMqqjQZZLgMYAWobzOf9dfZSCuZL/edit?usp=drive_link&ouid=105906005549265043560&rtpof=true&sd=true" class="btn-conv-outline">📥 Descargar Formato Extenso</a>
-                    <a href="https://drive.google.com/file/d/1tQ00WjjtWRn8QZeZhzFmHopMLGrwWNji/view?usp=drive_link" target="_blank" class="btn-conv-outline">📋 Métricas de Evaluación de Póster</a>
+                    <a href="https://form.jotform.com/262037484928870" target="_blank" rel="noopener noreferrer" class="btn-conv">Registro de Participación →</a>
+                    <a href="https://docs.google.com/document/d/1dDajRMqqjQZZLgMYAWobzOf9dfZSCuZL/edit?usp=drive_link&ouid=105906005549265043560&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-conv-outline">📥 Descargar Formato Extenso</a>
+                    <a href="https://drive.google.com/file/d/1tQ00WjjtWRn8QZeZhzFmHopMLGrwWNji/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-conv-outline">📋 Métricas de Evaluación de Póster</a>
                 </div>
             </div>
 
@@ -412,8 +437,8 @@
                 </div>
                 <p>Enfrenta desafíos tecnológicos de alto impacto y demuestra tu capacidad de innovación resolviendo problemáticas reales orientadas a la Industria 5.0.</p>
                 <div class="conv-card-actions">
-                    <a href="https://form.jotform.com/262036928262863" target="_blank" class="btn-conv">Formulario de Registro &rarr;</a>
-                    <a href="https://drive.google.com/file/d/1Ixj4wb6XtwJPJlg139EqkEOnAmdAXl_7/view?usp=sharing" class="btn-conv-outline">📋 BASES DE LA CONVOCATORIA</a>
+                    <a href="https://form.jotform.com/262036928262863" target="_blank" rel="noopener noreferrer" class="btn-conv">Formulario de Registro →</a>
+                    <a href="https://drive.google.com/file/d/1Ixj4wb6XtwJPJlg139EqkEOnAmdAXl_7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-conv-outline">📋 BASES DE LA CONVOCATORIA</a>
                     <a href="https://docs.google.com/document/d/13FXTpSdDUE3C-zHPivW8Y5ZKruNAjLTS/edit?usp=sharing&ouid=105906005549265043560&rtpof=true&sd=true" download class="btn-conv-outline">📥 Descargar Carta Responsiva</a>
                 </div>
             </div>
@@ -425,18 +450,16 @@
                 </div>
                 <p>Desarrolla habilidades especializadas junto a referentes del sector tecnológico. Formato interactivo con cupo limitado a 20 asistentes para asegurar un aprendizaje de alto nivel.</p>
                 <div class="conv-card-actions">
-                    <button onclick="toggleTalleres()" class="btn-conv" style="border:none; cursor:pointer;">Ver los 10 Talleres &darr;</button>
+                    <button onclick="toggleTalleres()" class="btn-conv" style="border:none; cursor:pointer;">Ver los 10 Talleres ↓</button>
                 </div>
             </div>
         </div>
 
-        <!-- CONTENEDOR DE LOS 10 TALLERES -->
         <div id="workshops-container" class="workshops-container">
-            <button onclick="closeTalleres()" class="close-workshops-btn" title="Cerrar talleres">&times;</button>
+            <button onclick="closeTalleres()" class="close-workshops-btn" title="Cerrar talleres">×</button>
             <h3 class="workshops-title">Talleres Disponibles (Cupo Máximo 20 por Taller)</h3>
             
             <div class="workshops-grid">
-                <!-- TALLER 1 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -450,11 +473,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/introduccion-al-diseno-molecular-automatizado-3d-machine-learning-tickets-1993866654838?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/introduccion-al-diseno-molecular-automatizado-3d-machine-learning-tickets-1993866654838?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 2 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -471,11 +493,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/manufactura-cfrp-por-metodo-vari-tickets-1993869812282?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/manufactura-cfrp-por-metodo-vari-tickets-1993869812282?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 3 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -492,11 +513,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/ingenieria-de-prompts-ia-tickets-1993870116191?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/ingenieria-de-prompts-ia-tickets-1993870116191?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 4 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -510,11 +530,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/implementacion-del-control-estadistico-de-proceso-a-traves-de-la-ia-tickets-1993870977768?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/implementacion-del-control-estadistico-de-proceso-a-traves-de-la-ia-tickets-1993870977768?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 5 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -531,11 +550,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/implementacion-del-control-estadistico-de-proceso-a-traves-de-la-ia-tickets-1993870977768?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/como-usar-powerbi-tickets-1994583263233?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 6 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -549,11 +567,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/de-la-caja-negra-a-la-toma-de-decisiones-transparente-tickets-1994583838955?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/de-la-caja-negra-a-la-toma-de-decisiones-transparente-tickets-1994583838955?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 7 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -567,11 +584,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/introduccion-a-la-robotica-taller-practico-tickets-1994584115783?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/introduccion-a-la-robotica-taller-practico-tickets-1994584115783?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 8 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -585,11 +601,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/gemelos-digitales-introduccion-tickets-1994584754694?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/gemelos-digitales-introduccion-tickets-1994584754694?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 9 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -603,11 +618,10 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/manufactura-aditiva-por-impresion-en-3d-tickets-1994585062615?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/manufactura-aditiva-por-impresion-en-3d-tickets-1994585062615?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
 
-                <!-- TALLER 10 -->
                 <div class="workshop-card">
                     <div>
                         <div class="workshop-header">
@@ -621,18 +635,17 @@
                     </div>
                     <div>
                         <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
-                        <a href="https://www.eventbrite.com.mx/e/taller-empresa-kostal-tickets-1993870235548?aff=oddtdtcreator" target="_blank" class="btn-eventbrite">Inscribirse en Eventbrite &rarr;</a>
+                        <a href="https://www.eventbrite.com.mx/e/taller-empresa-kostal-tickets-1993870235548?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
                     </div>
                 </div>
             </div>
 
             <div class="back-to-convocatoria-wrapper">
-                <button onclick="closeTalleres()" class="btn-back-up">&uarr; Volver a Convocatorias</button>
+                <button onclick="closeTalleres()" class="btn-back-up">↑ Volver a Convocatorias</button>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: SEDES -->
     <section id="sedes" class="sedes-section">
         <h2 class="section-title">SEDES</h2>
         <p class="section-subtitle">Conoce los lugares donde se llevarán a cabo las actividades del congreso</p>
@@ -649,7 +662,7 @@
                             📍 Av. Pie de la Cuesta No. 2501, Col. Nacional, Querétaro, Qro. C.P. 76148
                         </div>
                     </div>
-                    <a href="https://maps.google.com/?q=Universidad+Tecnol%C3%B3gica+de+Quer%C3%A9taro" target="_blank" class="btn-map">CÓMO LLEGAR &rarr;</a>
+                    <a href="https://maps.google.com/?q=Universidad+Tecnol%C3%B3gica+de+Quer%C3%A9taro" target="_blank" rel="noopener noreferrer" class="btn-map">CÓMO LLEGAR →</a>
                 </div>
             </div>
 
@@ -664,25 +677,25 @@
                             📍 Cto. Universidades I, Fracción 2, Zibatá, Querétaro, Qro. C.P. 76246
                         </div>
                     </div>
-                    <a href="https://maps.google.com/?q=Universidad+An%C3%A1huac+Quer%C3%A9taro" target="_blank" class="btn-map">CÓMO LLEGAR &rarr;</a>
+                    <a href="https://maps.google.com/?q=Universidad+An%C3%A1huac+Quer%C3%A9taro" target="_blank" rel="noopener noreferrer" class="btn-map">CÓMO LLEGAR →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FRANJA BLANCA PARA IMAGEN ÚNICA DE LOGOS -->
     <div class="logos-strip">
         <img src="galeria/logosInst.png" alt="Logos Institucionales">
     </div>
 
-    <!-- FOOTER Y CONTACTO -->
     <footer id="contacto" class="footer-section">
         <div class="footer-grid">
             <div class="footer-brand">
                 <img src="galeria/logoWhite.png" alt="Códice 5.0" class="footer-logo">
                 <p>Es el  1.er Congreso Internacional de Operaciones (OT), Datos, Inteligencia, 
                     Ciberseguridad y Entornos Digitales 5.0 (CODICE 2026)</p>
-                <p class="footer-organizer">Organizado por la Universidad Tecnológica de Querétaro (UTEQ) en colaboración con con la Universidad Anáhuac Querétaro y la Universidad Internacional de La Rioja en México (UNIR México). </p>
+                <p class="footer-organizer">Organizado por la Universidad Tecnológica de Querétaro (UTEQ) 
+                    en colaboración con con la Universidad Anáhuac Querétaro, la Universidad Internacional de La Rioja en México (UNIR México) y 
+                    la Escuela Nacional de Estudios Superiores Unidad Juriquilla UNAM (ENES Juriquilla). </p>
             </div>
 
             <div class="footer-col">
@@ -710,11 +723,11 @@
                     </li>
                     <li class="contact-item">
                         <span class="icon">📞</span>
-                        <span>Tel. (442) 209 6100 ext. 04 </span>
+                        <span>Llamadas al (442) 209 6100 ext. 2382 </span>
                     </li>
                     <li class="contact-item">
-                        <span class="icon">💬</span>
-                        <span>Cel. (442) 284 21 34</span>
+                        <span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon-ws"></span>
+                        <span>Mensajes al (442) 284 21 34</span>
                     </li>
                 </ul>
             </div>
@@ -724,7 +737,7 @@
             <div>© 2026 CODICE 5.0</div>
             <center> <p> Este programa es público, ajeno a cualquier partido político. Queda prohibido el uso para fines distintos a los establecidos en el programa.</p> </center>
             <div>
-                <a href="https://www.uteq.edu.mx" target="_blank">www.uteq.edu.mx</a>
+                <a href="https://www.uteq.edu.mx" target="_blank" rel="noopener noreferrer">www.uteq.edu.mx</a>
             </div>
         </div>
     </footer>
