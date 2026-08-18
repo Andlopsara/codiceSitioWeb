@@ -727,7 +727,7 @@ body { background-color: #ffffff; color: #333; }
 }
 
 .logos-strip img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     max-height: 80px;
     object-fit: contain;
@@ -904,6 +904,4 @@ img, svg, video {
         max-width: 100% !important;
         box-sizing: border-box !important;
     }
-}
-
 }
