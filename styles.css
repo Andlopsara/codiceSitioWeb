@@ -867,75 +867,43 @@ body { background-color: #ffffff; color: #333; }
    REGLAS RESPONSIVAS (MEDIA QUERIES)
    ========================================== */
 /* --- MEDIA QUERIES RESPONSIVAS --- */
-@media (max-width: 992px) {
-    .about-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .program-main-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
+img, svg, video {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
+/* 2. Corrige la franja de logos específicamente */
+.logos-strip {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15px 10px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.logos-strip img {
+    max-width: 100% !important;
+    width: 100% !important;
+    object-fit: contain !important;
+}
+
+/* 3. Evita el scroll hacia los lados en móviles de forma estricta */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+    html, body {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        position: relative !important;
     }
 
-    .navbar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #ffffff;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .navbar.active {
-        display: block;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .hero-subtitle {
-        font-size: 0.95rem;
-    }
-
-    .event-date-block {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .date-details {
-        text-align: center;
-    }
-
-    .timeline-list li {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .timeline-list .time {
-        min-width: auto;
+    .sedes-grid, 
+    .footer-grid, 
+    .about-container, 
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 }
 
-@media (max-width: 576px) {
-    .logos-strip {
-        padding: 15px 10px;
-    }
-    
-    .logos-strip img {
-        max-height: 55px;
-    }
 }
