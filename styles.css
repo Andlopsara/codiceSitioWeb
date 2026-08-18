@@ -849,6 +849,14 @@ body { background-color: #ffffff; color: #333; }
     color: #ffffff;
 }
 
+        /* Ajuste de alineación para la imagen del logo de WhatsApp dentro de la lista de contacto */
+        .contact-item img.icon-ws {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+  
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
