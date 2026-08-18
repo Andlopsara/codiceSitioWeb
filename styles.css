@@ -1,1028 +1,755 @@
-/* --- ESTILOS GENERALES --- */
-html { scroll-behavior: smooth; }
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-body { background-color: #ffffff; color: #333; }
-
-/* --- ENCABEZADO --- */
-.header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 8%; background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100;
-}
-.logo-container img { height: 45px; width: auto; }
-.navbar ul { display: flex; list-style: none; gap: 25px; align-items: center; }
-.navbar a { text-decoration: none; color: #555; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
-.navbar a:hover { color: #0b1f52; }
-
-/* BOTÓN MENÚ HAMBURGUESA (OCULTO EN DESKTOP) */
-.menu-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    font-size: 1.8rem;
-    color: #0b1f52;
-    cursor: pointer;
-}
-
-/* --- HERO VIDEO --- */
-.hero-section {
-    position: relative; min-height: 85vh; width: 100%; display: flex;
-    align-items: center; padding: 60px 8% 80px 8%; overflow: hidden; background-color: #0b1f52;
-}
-.hero-video {
-    position: absolute; top: 60%; left: 50%; min-width: 100%; min-height: 100%;
-    z-index: 1; transform: translateX(-50%) translateY(-50%); object-fit: cover; opacity: 0.50;
-}
-.hero-content { position: relative; z-index: 2; max-width: 650px; color: #ffffff; }
-.badge-title { color: #f28b00; font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; display: block; }
-.hero-logo { max-width: 380px; width: 100%; height: auto; margin-bottom: 15px; display: block; }
-.hero-subtitle { font-size: 1.4rem; font-weight: 600; color: #e2e8f0; margin-bottom: 25px; text-transform: uppercase; }
-.event-date-block { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; border-left: 3px solid #f28b00; padding-left: 15px; }
-.date-icon { font-size: 2.2rem; }
-.date-details .date-days { font-size: 1.3rem; font-weight: 800; color: #f28b00; }
-.date-details .date-month-location { font-size: 0.85rem; font-weight: 700; color: #ffffff; text-transform: uppercase; }
-
-.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
-.btn { padding: 12px 28px; border-radius: 6px; font-size: 0.85rem; font-weight: 800; text-decoration: none; text-transform: uppercase; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-.btn-primary { background-color: #f28b00; color: #fff; border: 2px solid #f28b00; }
-.btn-primary:hover { background-color: #d97700; }
-.btn-secondary { background-color: transparent; color: #fff; border: 2px solid #fff; }
-.btn-secondary:hover { background-color: #fff; color: #0b1f52; }
-
-/* --- CONTADOR REGRESIVO --- */
-.countdown-wrapper { position: relative; z-index: 10; margin-top: -60px; display: flex; justify-content: center; padding: 0 20px; margin-bottom: 30px; }
-.countdown-card { background: #ffffff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); padding: 20px 40px; width: 100%; max-width: 850px; text-align: center; }
-.countdown-title { color: #0b1f52; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; }
-.countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.countdown-item { position: relative; padding: 5px; }
-.countdown-item:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background-color: #e2e8f0; }
-.countdown-number { font-size: 2.2rem; font-weight: 900; color: #0b1f52; line-height: 1; }
-.countdown-label { font-size: 0.7rem; font-weight: 800; color: #f28b00; text-transform: uppercase; margin-top: 5px; }
-
-/* --- SOBRE CÓDICE Y TEMÁTICAS --- */
-.about-section { background-color: #ffffff; padding: 0 8% 60px 8%; }
-.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 50px; text-align: justify;}
-.about-text h2 { font-size: 2.2rem; color: #0b1f52; font-weight: 900; margin-bottom: 20px; }
-.about-text h2 span { color: #f28b00; }
-.about-text p { font-size: 0.95rem; line-height: 1.7; color: #555; }
-.about-image img { width: 100%; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-
-.topics-header { text-align: center; margin-bottom: 25px; }
-.topics-title { font-size: 1.3rem; color: #0b1f52; font-weight: 900; text-transform: uppercase; }
-.topics-subtitle { font-size: 0.69rem; color: #5e5d5b; font-weight: 700; text-transform: uppercase; }
-.topics-row { display: flex; justify-content: space-between; gap: 10px; overflow-x: auto; padding-bottom: 10px; }
-.topic-card { flex: 1; min-width: 110px; background: #ffffff; border-radius: 10px; padding: 15px 8px; text-align: center; border: 2px solid #f0f0f0; cursor: pointer; transition: all 0.3s; }
-.topic-card:hover, .topic-card.active { border-color: #f28b00; transform: translateY(-4px); }
-.topic-icon { font-size: 1.6rem; margin-bottom: 8px; display: block; }
-.topic-name { font-size: 0.65rem; font-weight: 800; color: #0b1f52; text-transform: uppercase; }
-
-/* CAJA DE DESCRIPCIÓN DE TEMÁTICAS CON BOTÓN DE CIERRE */
-.topic-description-box {
-    position: relative;
-    margin-top: 20px;
-    background-color: #f8fafc;
-    border-left: 4px solid #f28b00;
-    padding: 20px 45px 20px 20px;
-    border-radius: 0 8px 8px 0;
-    display: none;
-    animation: fadeIn 0.3s ease;
-}
-
-.close-topic-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: transparent;
-    color: #64748b;
-    border: none;
-    font-size: 1.4rem;
-    font-weight: 900;
-    cursor: pointer;
-    line-height: 1;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-
-.close-topic-btn:hover {
-    background-color: #e2e8f0;
-    color: #0b1f52;
-}
-
-/* --- ESTILOS COMITÉ ORGANIZADOR --- */
-.committee-trigger-wrapper {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.btn-toggle-committee {
-    background-color: #0b1f52;
-    color: #ffffff;
-    border: 2px solid #0b1f52;
-    padding: 12px 28px;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(11, 31, 82, 0.15);
-}
-
-.btn-toggle-committee:hover {
-    background-color: #f28b00;
-    border-color: #f28b00;
-    transform: translateY(-2px);
-}
-
-.committee-container {
-    position: relative;
-    margin-top: 30px;
-    background-color: #f8fafc;
-    border-radius: 16px;
-    padding: 40px 30px 30px 30px;
-    border: 1px solid #e2e8f0;
-    display: none;
-    animation: fadeIn 0.4s ease;
-    text-align: center;
-}
-
-.close-committee-btn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    background: #e2e8f0;
-    color: #0b1f52;
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    font-weight: 900;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-
-.close-committee-btn:hover {
-    background: #f28b00;
-    color: #ffffff;
-}
-
-.committee-title {
-    font-size: 1.5rem;
-    color: #0b1f52;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.committee-subtitle {
-    font-size: 0.85rem;
-    color: #f28b00;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
-.committee-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
-    margin-bottom: 30px;
-}
-
-.committee-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    padding: 18px 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: all 0.25s ease;
-}
-
-.committee-card strong {
-    font-size: 0.9rem;
-    font-weight: 800;
-    color: #0b1f52;
-    line-height: 1.3;
-}
-
-.committee-role {
-    display: block;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: #64748b; 
-    margin-top: 6px;
-    line-height: 1.35;
-}
-
-.committee-card:hover {
-    border-color: #f28b00;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(242, 139, 0, 0.12);
-}
-
-.back-to-about-wrapper {
-    border-top: 1px solid #e2e8f0;
-    padding-top: 20px;
-}
-
-/* --- SECCIÓN CONFERENCISTAS MAGISTRALES Y PANEL --- */
-.conferencistas-section {
-    padding: 80px 8%;
-    background-color: #ffffff;
-    text-align: center;
-}
-
-.conferencistas-header {
-    margin-bottom: 40px;
-}
-
-.conferencistas-header h2 {
-    font-size: 1.8rem;
-    color: #0b1f52;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.title-underline {
-    width: 60px;
-    height: 3px;
-    background-color: #f28b00;
-    margin: 10px auto 0 auto;
-    border-radius: 2px;
-}
-
-/* Grid para los 3 Magistrales */
-.conferencistas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.conferencista-card {
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    border: 1px solid #e2e8f0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.conferencista-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(11, 31, 82, 0.12);
-}
-
-.conferencista-img-wrapper {
-    background-color: #e2e8f0;
-    height: 240px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.conferencista-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    object-position: center 30%;
-}
-
-.conferencista-content {
-    padding: 25px 20px;
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.conf-badge {
-    background-color: #f28b00;
-    color: #ffffff;
-    font-size: 0.65rem;
-    font-weight: 800;
-    padding: 4px 10px;
-    border-radius: 12px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 12px;
-}
-
-.conferencista-name {
-    font-size: 1.2rem;
-    color: #0b1f52;
-    font-weight: 800;
-    margin-bottom: 4px;
-    line-height: 1.2;
-}
-
-.conferencista-affiliation {
-    font-size: 0.85rem;
-    color: #64748b;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.conf-email {
-    font-size: 0.75rem;
-    color: #0284c7;
-    text-decoration: none;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.conf-email:hover {
-    text-decoration: underline;
-}
-
-.conferencista-details {
-    margin-top: auto;
-    width: 100%;
-    text-align: left;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 15px;
-}
-
-.conf-title {
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #334155;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-
-.conf-meta, .conf-theme {
-    font-size: 0.75rem;
-    color: #64748b;
-    margin-bottom: 5px;
-}
-
-/* Tarjeta Especial del Panel */
-.panel-special-card {
-    background: linear-gradient(135deg, #f8fafc, #edf2f7);
-    border-radius: 16px;
-    padding: 35px 30px;
-    border: 1px solid #cbd5e1;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-}
-
-.panel-badge {
-    background-color: #0b1f52;
-    color: #ffffff;
-    font-size: 0.65rem;
-    font-weight: 800;
-    padding: 4px 12px;
-    border-radius: 12px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.panel-title {
-    font-size: 1.3rem;
-    color: #0b1f52;
-    font-weight: 900;
-    margin-bottom: 5px;
-}
-
-.panel-subtitle {
-    font-size: 0.95rem;
-    color: #f28b00;
-    font-weight: 700;
-    font-style: italic;
-    margin-bottom: 15px;
-}
-
-.panel-meta-info {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 0.8rem;
-    color: #475569;
-    font-weight: 600;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.panelists-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.panelist-item {
-    background: #ffffff;
-    padding: 20px 15px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-}
-
-.panelist-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 2px solid #f28b00;
-    margin-bottom: 12px;
-}
-
-.panelist-item h4 {
-    font-size: 0.88rem;
-    color: #0b1f52;
-    font-weight: 800;
-    margin-bottom: 4px;
-    line-height: 1.2;
-}
-
-.panelist-item p {
-    font-size: 0.72rem;
-    color: #64748b;
-    line-height: 1.3;
-}
-
-/* --- ESTILOS PROGRAMA CON TIMELINE Y TARJETA PDF --- */
-.program-section {
-    position: relative;
-    padding: 80px 8%;
-    background-color: #f8fafc;
-    overflow: hidden;
-    text-align: center;
-}
-
-#canvas-network {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.program-content-wrapper {
-    position: relative;
-    z-index: 2;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.program-main-container {
-    display: grid;
-    grid-template-columns: 1.8fr 1fr;
-    gap: 30px;
-    align-items: stretch;
-    margin-top: 30px;
-}
-
-.program-timeline-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid #e2e8f0;
-    text-align: left;
-}
-
-.program-tabs {
-    display: flex;
-    gap: 15px;
-    border-bottom: 2px solid #e2e8f0;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-}
-
-.tab-btn {
-    background: transparent;
-    border: none;
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: #64748b;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-.tab-btn.active, .tab-btn:hover {
-    background-color: #0b1f52;
-    color: #ffffff;
-}
-
-.timeline-venue {
-    font-size: 0.78rem;
-    font-weight: 800;
-    color: #f28b00;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.timeline-content {
-    display: none;
-    animation: fadeIn 0.4s ease;
-}
-
-.timeline-content.active {
-    display: block;
-}
-
-.timeline-list {
-    list-style: none;
-    position: relative;
-    padding-left: 20px;
-}
-
-.timeline-list::before {
-    content: "";
-    position: absolute;
-    left: 4px;
-    top: 5px;
-    bottom: 5px;
-    width: 2px;
-    background-color: #cbd5e1;
-}
-
-.timeline-list li {
-    position: relative;
-    margin-bottom: 18px;
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-.timeline-list li::before {
-    content: "";
-    position: absolute;
-    left: -20px;
-    top: 5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #f28b00;
-    border: 2px solid #ffffff;
-}
-
-.timeline-list .time {
-    font-size: 0.78rem;
-    font-weight: 800;
-    color: #0b1f52;
-    min-width: 95px;
-}
-
-.timeline-list .event {
-    font-size: 0.85rem;
-    color: #334155;
-    line-height: 1.4;
-}
-
-.program-download-card {
-    background: linear-gradient(135deg, #0b1f52, #16327a);
-    color: #ffffff;
-    border-radius: 16px;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(11, 31, 82, 0.2);
-}
-
-.calendar-icon {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
-
-.program-download-card h3 {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
-
-.program-download-card p {
-    font-size: 0.82rem;
-    opacity: 0.85;
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-.btn-download-pdf {
-    background-color: #ffffff;
-    color: #0b1f52;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.btn-download-pdf:hover {
-    background-color: #f28b00;
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-/* --- SECCIÓN CONVOCATORIA --- */
-.convocatoria-section { padding: 80px 8%; background-color: #ffffff; text-align: center; }
-.section-title { font-size: 1.8rem; color: #0b1f52; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; position: relative; display: inline-block; }
-.section-title::after { content: ""; display: block; width: 50%; height: 3px; background-color: #f28b00; margin: 8px auto 0 auto; border-radius: 2px; }
-.section-subtitle { font-size: 0.85rem; color: #64748b; margin-bottom: 40px; }
-
-.convocatoria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
-.conv-card { background: linear-gradient(135deg, #0b1f52, #16327a); color: #ffffff; border-radius: 16px; padding: 30px 25px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 25px rgba(11, 31, 82, 0.15); transition: transform 0.3s ease; }
-.conv-card.orange { background: linear-gradient(135deg, #f28b00, #d97700); }
-.conv-card:hover { transform: translateY(-5px); }
-
-.conv-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
-.conv-card h3 { font-size: 1.2rem; font-weight: 800; text-transform: uppercase; max-width: 70%; line-height: 1.2; }
-.conv-card-icon { font-size: 2.2rem; }
-.conv-card p { font-size: 0.85rem; line-height: 1.5; opacity: 0.9; margin-bottom: 25px; }
-
-.conv-card-actions { display: flex; flex-direction: column; gap: 10px; }
-.btn-conv { background-color: #ffffff; color: #0b1f52; padding: 10px 18px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; text-decoration: none; text-align: center; transition: background-color 0.3s; }
-.btn-conv:hover { background-color: #f0f0f0; }
-.btn-conv-outline { background: transparent; color: #ffffff; border: 1.5px solid #ffffff; padding: 8px 18px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; text-decoration: none; text-align: center; }
-.btn-conv-outline:hover { background: rgba(255,255,255,0.15); }
-
-/* CONTENEDOR DE LOS 10 TALLERES */
-.workshops-container { 
-    position: relative; margin-top: 50px; background-color: #f8fafc; border-radius: 16px; 
-    padding: 40px 30px 30px 30px; text-align: left; border: 1px solid #e2e8f0; display: none; animation: fadeIn 0.4s ease;
-}
-.close-workshops-btn { position: absolute; top: 20px; right: 25px; background: #e2e8f0; color: #0b1f52; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1.2rem; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-.close-workshops-btn:hover { background: #f28b00; color: #ffffff; }
-.workshops-title { font-size: 1.4rem; color: #0b1f52; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; text-align: center; padding-right: 30px; }
-.workshops-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 35px; }
-.workshop-card { background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #edf2f7; display: flex; flex-direction: column; justify-content: space-between; }
-.workshop-header { display: flex; gap: 15px; align-items: center; margin-bottom: 15px; }
-.workshop-img { width: 65px; height: 65px; border-radius: 50%; object-fit: cover; border: 2px solid #f28b00; }
-.workshop-author-name { font-size: 0.95rem; font-weight: 800; color: #0b1f52; }
-.workshop-badge { font-size: 0.65rem; background: #e2e8f0; color: #475569; padding: 3px 8px; border-radius: 10px; font-weight: 700; display: inline-block; margin-top: 3px; }
-.workshop-title { font-size: 0.9rem; font-weight: 800; color: #f28b00; margin-bottom: 8px; line-height: 1.3; }
-.workshop-desc { font-size: 0.8rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
-.workshop-capacity { font-size: 0.75rem; font-weight: 700; color: #0284c7; margin-bottom: 15px; display: flex; align-items: center; gap: 5px; }
-.btn-eventbrite { background-color: #f05537; color: #ffffff; text-decoration: none; padding: 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; text-align: center; transition: background 0.3s; display: block; }
-.btn-eventbrite:hover { background-color: #d93d1d; }
-.back-to-convocatoria-wrapper { text-align: center; border-top: 1px solid #e2e8f0; padding-top: 20px; }
-.btn-back-up { background-color: #0b1f52; color: #ffffff; border: none; padding: 12px 25px; border-radius: 25px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.3s; }
-.btn-back-up:hover { background-color: #f28b00; }
-
-/* --- SECCIÓN: SEDES --- */
-.sedes-section { padding: 80px 8%; background-color: #f8fafc; text-align: center; }
-.sedes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
-.sede-card { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border: 1px solid #edf2f7; display: flex; transition: transform 0.3s ease; }
-.sede-card:hover { transform: translateY(-5px); }
-.sede-image { width: 45%; min-height: 220px; object-fit: cover; }
-.sede-content { width: 55%; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; text-align: left; }
-.sede-tag { font-size: 0.65rem; font-weight: 800; color: #f28b00; text-transform: uppercase; margin-bottom: 4px; display: block; }
-.sede-name { font-size: 1.1rem; color: #0b1f52; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
-.sede-desc { font-size: 0.75rem; color: #475569; line-height: 1.4; margin-bottom: 12px; }
-.sede-address { font-size: 0.72rem; color: #64748b; margin-bottom: 15px; line-height: 1.3; }
-.btn-map { border: 1.5px solid #0b1f52; color: #0b1f52; padding: 8px 16px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; text-decoration: none; transition: all 0.3s; width: fit-content; }
-.btn-map:hover { background-color: #0b1f52; color: #ffffff; }
-
-/* --- FRANJA BLANCA PARA LOGOS ORGANIZADORES --- */
-.logos-strip {
-    background-color: #ffffff;
-    padding: 20px 5%; /* Ajuste de padding para pantallas pequeñas */
-    text-align: center;
-    border-top: 1px solid #e2e8f0;
-}
-
-.logos-strip img {
-    width: 100%;           /* Ocupa el ancho del contenedor */
-    max-width: 100%;       /* Se adapta en pantallas móviles sin desbordarse */
-    height: auto;          /* Mantiene la proporción de la imagen */
-    max-height: 80px;      /* Evita que se vea gigantesca en PC */
-    object-fit: contain;   /* Mantiene el escalado correcto */
-}
-
-/* --- SECCIÓN CONTACTO Y FOOTER --- */
-.footer-section {
-    background-color: #0b1f52;
-    color: #ffffff;
-    padding: 60px 8% 20px 8%;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-brand .footer-logo {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.footer-brand p {
-    font-size: 0.85rem;
-    color: #cbd5e1;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.footer-organizer {
-    font-size: 0.8rem;
-    color: #f28b00;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.footer-col h4 {
-    font-size: 0.95rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #ffffff;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.footer-col h4::after {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 2px;
-    background-color: #f28b00;
-    margin-top: 5px;
-}
-
-.footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #f28b00;
-}
-
-.contact-info-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 0.85rem;
-    color: #cbd5e1;
-    line-height: 1.4;
-}
-
-.contact-item span.icon {
-    color: #f28b00;
-    font-size: 1.1rem;
-}
-
-.contact-item a {
-    color: #cbd5e1;
-    text-decoration: none;
-}
-
-.contact-item a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
-    text-align: center;
-    font-size: 0.75rem;
-    color: #94a3b8;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.footer-bottom a {
-    color: #94a3b8;
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    color: #ffffff;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ==========================================
-   REGLAS RESPONSIVAS (MEDIA QUERIES)
-   ========================================== */
-
-/* TABLETS Y PANTALLAS MEDIANAS (Hasta 1024px) */
-@media (max-width: 1024px) {
-    .header {
-        padding: 15px 5%;
-    }
-
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .sedes-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .sede-card {
-        flex-direction: column;
-    }
-
-    .sede-image {
-        width: 100%;
-        height: 200px;
-    }
-
-    .sede-content {
-        width: 100%;
-    }
-}
-
-/* MENÚ HAMBURGUESA Y ADAPTACIONES PARA DISPOSITIVOS MÓVILES (Hasta 850px) */
-@media (max-width: 850px) {
-    .menu-toggle {
-        display: block; /* MUESTRA LAS 3 LÍNEAS */
-    }
-
-    .navbar {
-        display: none; /* OCULTA EL MENÚ DE TEXTO CONTINUO */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        padding: 20px;
-    }
-
-    .navbar.active {
-        display: block; /* SE MUESTRA AL HACER CLIC EN LAS 3 LÍNEAS */
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    /* AJUSTE ESCALA HERO EN MÓVIL */
-    .hero-section {
-        min-height: auto;
-        padding: 35px 5% 45px 5%;
-    }
-
-    .hero-subtitle {
-        font-size: 0.95rem;
-        line-height: 1.4;
-        margin-bottom: 15px;
-    }
-
-    .badge-title {
-        font-size: 0.95rem;
-    }
-
-    .hero-logo {
-        max-width: 240px;
-    }
-
-    .event-date-block {
-        margin-bottom: 20px;
-        padding-left: 10px;
-    }
-
-    .date-details .date-days {
-        font-size: 1.1rem;
-    }
-
-    .date-details .date-month-location {
-        font-size: 0.75rem;
-    }
-
-    /* CONTADOR HORIZONTAL MÁS PEQUEÑO Y PROPORCIONAL */
-    .countdown-wrapper {
-        margin-top: -25px;
-        padding: 0 10px;
-    }
-
-    .countdown-card {
-        padding: 12px 15px;
-    }
-
-    .countdown-title {
-        font-size: 0.7rem;
-        margin-bottom: 8px;
-    }
-
-    .countdown-grid {
-        display: flex;
-        justify-content: space-around;
-        gap: 5px;
-    }
-
-    .countdown-number {
-        font-size: 1.3rem;
-    }
-
-    .countdown-label {
-        font-size: 0.55rem;
-    }
-
-    .program-main-container {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .conferencistas-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .panel-meta-info {
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-
-/* TELÉFONOS MÓVILES PEQUEÑOS (Hasta 576px) */
-@media (max-width: 576px) {
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .program-tabs {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .tab-btn {
-        width: 100%;
-    }
-
-    .timeline-list li {
-        flex-direction: column;
-        gap: 4px;
-    }
-
-    .convocatoria-grid {
-        grid-template-columns: 1fr;
-    }
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Códice 5.0 - Congreso Internacional</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajuste de alineación para la imagen del logo de WhatsApp dentro de la lista de contacto */
+        .contact-item img.icon-ws {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <a href="#" onclick="closeMenu()">
+                <img src="galeria/logo.png" alt="Códice 5.0 Logo">
+            </a>
+        </div>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="#" onclick="closeMenu()">Inicio</a></li>
+                <li><a href="#sobre-codice" onclick="closeMenu()">Sobre CODICE</a></li>
+                <li><a href="#conferencistas" onclick="closeMenu()">Conferencistas</a></li>
+                <li><a href="#programa" onclick="closeMenu()">Programa</a></li>
+                <li><a href="#convocatoria" onclick="closeMenu()">Convocatoria</a></li>
+                <li><a href="#sedes" onclick="closeMenu()">Sedes</a></li>
+                <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="galeria/videoF2.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <span class="badge-title">1ER CONGRESO INTERNACIONAL</span>
+            <img src="galeria/logoWhite.png" alt="Codice 5.0" class="hero-logo">
+            <p class="hero-subtitle">DE OPERACIONES (OT), DATOS, INTELIGENCIA, CIBERSEGURIDAD Y ENTORNOS DIGITALES</p>
+            <div class="event-date-block">
+                <div class="date-icon">📅</div>
+                <div class="date-details">
+                    <div class="date-days">23 AL 25</div>
+                    <div class="date-month-location">DE SEPTIEMBRE 2026 | SANTIAGO DE QUERÉTARO, MÉXICO</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#convocatoria" class="btn btn-primary">REGÍSTRATE AHORA →</a>
+                <a href="#programa" class="btn btn-secondary">VER PROGRAMA →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-codice" class="about-section">
+        <div class="countdown-wrapper">
+            <div class="countdown-card">
+                <h3 class="countdown-title">CUENTA REGRESIVA PARA EL CONGRESO</h3>
+                <div class="countdown-grid">
+                    <div class="countdown-item"><div id="days" class="countdown-number">00</div><div class="countdown-label">Días</div></div>
+                    <div class="countdown-item"><div id="hours" class="countdown-number">00</div><div class="countdown-label">Horas</div></div>
+                    <div class="countdown-item"><div id="minutes" class="countdown-number">00</div><div class="countdown-label">Minutos</div></div>
+                    <div class="countdown-item"><div id="seconds" class="countdown-number">00</div><div class="countdown-label">Segundos</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-container">
+            <div class="about-text">
+                <h2>¿QUÉ ES<br><span>CODICE?</span></h2>
+                <p><strong>Es el 1er Congreso Internacional de Operaciones (OT), Datos, Inteligencia, 
+                    Ciberseguridad y Entornos Digitales 5.0 (CODICE 2026) impulsado
+                    por la Universidad Tecnológica de Querétaro (UTEQ) en colaboración con la Universidad Anáhuac Querétaro, 
+                    la Universidad Internacional de La Rioja en México (UNIR México) y
+                    la Escuela Nacional de Estudios Superiores Unidad Juriquilla UNAM, Querétaro (ENES Juriquilla). </strong> <br> 
+                    No es solo un congreso, es un punto de encuentro académico, tecnológico e interdisciplinario, un puente entre la academia, la industria y la sociedad. Promovemos el desarrollo de talento altamente 
+                    capacitado para afrontar los desafíos de la transformación digital,
+                    la eficiencia operativa y el desarrollo tecnológico sostenible.  
+                    </p>
+            </div>
+            <div class="about-image">
+                <img src="galeria/imagen1.png" alt="Innovación e IA">
+            </div>
+        </div>
+
+        <div class="topics-header">
+            <h3 class="topics-title">Temáticas Centrales</h3>
+            <span class="topics-subtitle">Selecciona un área del conocimiento para conocer los temas y enfoques clave del congreso.</span>
+        </div>
+        <div class="topics-row">
+            <div class="topic-card" onclick="showDescription('ia', this)"><span class="topic-icon">🤖</span><div class="topic-name">Inteligencia Artificial</div></div>
+            <div class="topic-card" onclick="showDescription('ot', this)"><span class="topic-icon">⚙️</span><div class="topic-name">Operaciones (OT)</div></div>
+            <div class="topic-card" onclick="showDescription('datos', this)"><span class="topic-icon">🗄️</span><div class="topic-name">Datos</div></div>
+            <div class="topic-card" onclick="showDescription('ciber', this)"><span class="topic-icon">🔒</span><div class="topic-name">Ciberseguridad</div></div>
+            <div class="topic-card" onclick="showDescription('entornos', this)"><span class="topic-icon">☁️</span><div class="topic-name">Entornos Digitales</div></div>
+            <div class="topic-card" onclick="showDescription('ind5', this)"><span class="topic-icon">🦾</span><div class="topic-name">Industria 5.0</div></div>
+        </div>
+        <div id="description-box" class="topic-description-box">
+            <button class="close-topic-btn" onclick="closeDescription()" title="Cerrar">×</button>
+            <h4 id="desc-title">Título</h4>
+            <p id="desc-text">Texto de descripción...</p>
+        </div>
+
+        <div class="committee-trigger-wrapper">
+            <button onclick="toggleCommittee()" class="btn-toggle-committee">
+                👥 CONOCE AL COMITÉ ORGANIZADOR ↓
+            </button>
+        </div>
+
+        <div id="committee-container" class="committee-container">
+            <button onclick="closeCommittee()" class="close-committee-btn" title="Cerrar">×</button>
+            <h3 class="committee-title">Comité Organizador</h3>
+            <p class="committee-subtitle">Nuestro conjunto de profesionales experimentados y de renombre</p>
+
+            <div class="committee-grid">
+                <div class="committee-card">
+                    <strong>Dr. Luis Fernando Pantoja Amaro</strong>
+                    <span class="committee-role">Rector Universidad Tecnológica de Querétaro (UTEQ).</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. Luis Eduardo Alverde Montemayor</strong>
+                    <span class="committee-role">Rector de la Universidad Anáhuac Querétaro.</span>
+                </div>
+                 <div class="committee-card">
+                    <strong>Dr. Enrique Arturo Cantoral Uriza</strong>
+                    <span class="committee-role">Director de la ENES Juriquilla, UNAM Querétaro</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. Francisco David Mejía Rodríguez</strong>
+                    <span class="committee-role">Rector de la Universidad Internacional de La Rioja en México (UNIR México)</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. Juan Manuel Peña Aguilar</strong>
+                    <span class="committee-role">Presidente del Comité Organizador CODICE 2026.</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. Salvador Ignacio Escobar Villanueva</strong>
+                    <span class="committee-role">Coordinador General y Enlace Institucional del Congreso CODICE 2026.</span>
+                </div>
+                
+                <div class="committee-card">
+                    <strong>M.G.P Jorge Cervantes Acosta</strong>
+                    <span class="committee-role">Vicepresidente del Comité Organizador CODICE 2026.</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. Marco Antonio Aceves</strong>
+                    <span class="committee-role">Líder de la Comisión de Ponencias.</span>
+                </div> 
+                <div class="committee-card">
+                    <strong>Ing. Héctor López Nicolás</strong>
+                    <span class="committee-role">Líder de la Comisión de Talleres y Hackathon.</span>
+                </div>
+                <div class="committee-card">
+                    <strong>I.Q. Orlando González Montesoro</strong>
+                    <span class="committee-role">Coordinador Principal de Evaluación y Jueces.</span>
+                </div>
+                <div class="committee-card">
+                    <strong>M. en C. Antonio Salomón Morales Torres</strong>
+                    <span class="committee-role">Co-Coordinador Principal de Evaluación de Presentaciones Orales, Jueces y Ponencias.</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Ing. Gerardo Rodríguez de Jesús</strong>
+                    <span class="committee-role">Líder de la Comisión de Logística y Programa</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Ing. Patricio Santiago Jiménez</strong>
+                    <span class="committee-role">Líder de la Comisión de Cotizaciones, Protocolo, Inauguración y Clausura.</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Ing. Andrea Sarahí López Guerrero</strong>
+                    <span class="committee-role">Coordinadora de Logística, Programa y sitio web de CODICE 2026.</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Mtro. Jevet Emiliano López Campos</strong>
+                    <span class="committee-role">Líder de la Comisión de Registro de asistentes.</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. Luis Guadalupe Macías Trejo</strong>
+                    <span class="committee-role">Coordinador Principal de Vinculación e Invitaciones</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Mtra. J. Gabriela Suárez Castañón</strong>
+                    <span class="committee-role">Co-Coordinadora Principal de Vinculación</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Lic. Paulina Angélica Kanchi Ledesma</strong>
+                    <span class="committee-role">Líder del comité de Finanzas</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Mtra. Leticia Vera Reyes</strong>
+                    <span class="committee-role">Líder de la Comisión de jueces del Concurso de Posters y Hackathon</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Dr. José Manuel Jaime Becerril</strong>
+                    <span class="committee-role">Coordinador Principal de Espacios para el Congreso y Soporte Técnico</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Lic. Asher García Díaz</strong>
+                    <span class="committee-role">Coordinador Principal de Invitaciones a la Industria e Imagen/Difusión</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Ing. Esmeralda Vázquez García</strong>
+                    <span class="committee-role">Co-coordinadora de los asistentes Y registrosde CODICE 2026</span>
+                </div>
+                <div class="committee-card">
+                    <strong>M. en E. Rolando Gutiérrez López</strong>
+                    <span class="committee-role">Coordinador Principal de Jóvenes y Transporte</span>
+                </div>
+                <div class="committee-card">
+                    <strong>Sheccid Acevedo</strong>
+                    <span class="committee-role">Coordinadora de Conferencia y Panel Sede Anahuac de CODICE 2026</span>
+                </div>
+                <div class="committee-card">
+                    <strong>María Glpe. Vázquez</strong>
+                    <span class="committee-role">Coordinadora del Recorrido Anáhuac de CODICE 2026</span>
+                </div> 
+                <div class="committee-card">
+                    <strong>Universidad Anáhuac Querétaro.</strong>
+                    <span class="committee-role">Colaborador Institucional del Congreso CODICE 2026.</span>
+                </div> 
+                <div class="committee-card">
+                    <strong>Universidad Internacional de La Rioja en México (UNIR México).</strong>
+                    <span class="committee-role">Colaborador Institucional del Congreso CODICE 2026.</span>
+                </div> 
+                 <div class="committee-card">
+                    <strong>Escuela Nacional de Estudios Superiores Unidad Juriquilla UNAM , Querétaro (ENES Juriquilla).</strong>
+                    <span class="committee-role">Colaborador Institucional del Congreso CODICE 2026.</span>
+                </div> 
+            </div> 
+
+            <div class="back-to-about-wrapper">
+                <button onclick="closeCommittee()" class="btn-back-up">↑ Ocultar Comité Organizador</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="conferencistas" class="conferencistas-section">
+        <div class="conferencistas-header">
+            <h2>CONFERENCISTAS MAGISTRALES</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="conferencistas-grid">
+            <div class="conferencista-card">
+                <div class="conferencista-img-wrapper">
+                    <img src="galeria/conferencia1.png" alt="Juan Antonio Asencio Armenta" onerror="this.src='https://via.placeholder.com/300x250/e2e8f0/0b1f52?text=Juan+Antonio+Asencio'">
+                </div>
+                <div class="conferencista-content">
+                    <span class="conf-badge">CONFERENCIA MAGISTRAL 1</span>
+                    <h3 class="conferencista-name">Mtro. Juan Antonio Asencio Armenta</h3>
+                    <p class="conferencista-affiliation">Director de Tecnología y Gerente General de Ingeniería para Gas Power México Latam GE VERNOVA</p>
+                    <div class="conferencista-details">
+                        <p class="conf-title">"Evolución e Implementación de Espacios Inmersivos de Alto Rendimiento: Un Modelo de Triple Hélice para la Innovación Educativa en la UTEQ"</p>
+                        <p class="conf-meta">🕒 10:30 - 11:30 | 📍 Gimnasio Auditorio UTEQ</p>
+                        <p class="conf-theme">📌 Innovación Educativa / Gestión de la Tecnología</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conferencista-card">
+                <div class="conferencista-img-wrapper">
+                    <img src="galeria/conferencia2.png" alt="Dr. Jairo Buitrago Ciro" onerror="this.src='https://via.placeholder.com/300x250/e2e8f0/0b1f52?text=Dr.+Jairo+Buitrago'">
+                </div>
+                <div class="conferencista-content">
+                    <span class="conf-badge">CONFERENCIA MAGISTRAL 2</span>
+                    <h3 class="conferencista-name">Dr. Jairo Buitrago Ciro</h3>
+                    <p class="conferencista-affiliation">Consultor en Inteligencia Artificial aplicada a la educación y comunicación científica</p>
+                    
+                    <div class="conferencista-details">
+                        <p class="conf-title">"La función de los centros de información en la era de la inteligencia artificial: alfabetización, ética y acompañamiento a la investigación científica."</p>
+                        <p class="conf-meta">🕒 10:30 - 11:30 | 📍 Universidad Anáhuac Querétaro (Edificio IDEA)</p>
+                        <p class="conf-theme">📌 IA y Sociedad / Gestión de la Información</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conferencista-card">
+                <div class="conferencista-img-wrapper">
+                    <img src="galeria/conferencia3.png" alt="Dr. Edgar Adrián Franco Urquiza" onerror="this.src='https://via.placeholder.com/300x250/e2e8f0/0b1f52?text=Dr.+Edgar+Franco'">
+                </div>
+                <div class="conferencista-content">
+                    <span class="conf-badge">CONFERENCIA MAGISTRAL 3</span>
+                    <h3 class="conferencista-name">Dr. Edgar Adrián Franco Urquiza</h3>
+                    <p class="conferencista-affiliation">Profesor Investigador en AIMs Tec de Monterrey</p>
+                    <div class="conferencista-details">
+                        <p class="conf-title">"De los residuos a materiales de ingeniería de alto valor: Cómo la ingeniería de materiales circulares está transformando la industria manufacturera"</p>
+                        <p class="conf-meta">🕒 15:20 - 16:20 | 📍 Gimnasio Auditorio UTEQ</p>
+                        <p class="conf-theme">📌 Ingeniería Mecánica / Automatización</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-special-card">
+            <div class="panel-header-info">
+                <span class="panel-badge">📍 SEDE: Universidad Anáhuac Querétaro (Edificio IDEA)</span>
+                <h3 class="panel-title">PANEL DE EDUCACIÓN Y TECNOLOGÍA</h3>
+                <p class="panel-subtitle">"Formando al Talento 5.0: Sinergia Universitaria para la Transformación Digital en Querétaro"</p>
+                <div class="panel-meta-info">
+                    <span>🕒 11:30 - 12:30</span>
+                    <span>📌 Innovación Educativa / Transformación Digital y Políticas Universitarias</span>
+                </div>
+            </div>
+            
+            <div class="panelists-grid">
+                <div class="panelist-item">
+                    <div class="panelist-avatar" style="background-image: url('https://aldialogo.sfo2.digitaloceanspaces.com/uploads/2026/06/Rector-Luis-Fernando-Pantoja-impulsa-la-transformacion-digital-en-la-UTEQ.jpg');"></div>
+                    <h4>Dr. Luis Fernando Pantoja Amaro</h4>
+                    <p>Rector Universidad Tecnológica de Querétaro (UTEQ)</p>
+                </div>
+                <div class="panelist-item">
+                    <div class="panelist-avatar" style="background-image: url('https://www.dgcs.unam.mx/boletin/bdboletin/multimedia/WAV260301/157(1).jpg');"></div>
+                    <h4>Dr. Enrique Arturo Cantoral Uriza</h4>
+                    <p>Director de la ENES Juriquilla, UNAM Querétaro</p>
+                </div>
+                <div class="panelist-item">
+                    <div class="panelist-avatar" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUqjBRTQ-2yFjEYpjWuOgxr4LIlsvER0AOsCYYuJOPKmNjcyYbGeQAgIyP&s=10');"></div>
+                    <h4>Dr. Luis Eduardo Alverde Montemayor</h4>
+                    <p>Rector de la Universidad Anáhuac Querétaro</p>
+                </div>
+                <div class="panelist-item">
+                    <div class="panelist-avatar" style="background-image: url('galeria/conferencia3.png');"></div>
+                    <h4>Dr. Edgar Adrian Franco Urquiza</h4>
+                    <p>Profesor Investigador en AIMs Tec de Monterrey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programa" class="program-section">
+        <canvas id="canvas-network"></canvas>
+
+        <div class="program-content-wrapper">
+            <h2 class="section-title" style="color: #0b1f52;">PROGRAMA DEL CONGRESO</h2>
+            <p class="section-subtitle">Explora la agenda oficial de actividades por día</p>
+
+            <div class="program-main-container">
+                <div class="program-timeline-card">
+                    <div class="program-tabs">
+                        <button class="tab-btn active" onclick="switchDay(1)">DÍA 1 (23 SEP)</button>
+                        <button class="tab-btn" onclick="switchDay(2)">DÍA 2 (24 SEP)</button>
+                        <button class="tab-btn" onclick="switchDay(3)">DÍA 3 (25 SEP)</button>
+                    </div>
+
+                    <div id="day-1" class="timeline-content active">
+                        <div class="timeline-venue">📍 SEDE: Universidad Tecnológica de Querétaro (UTEQ)</div>
+                        <ul class="timeline-list">
+                            <li><span class="time">09:00 - 09:45</span> <span class="event">Registro de Asistentes</span></li>
+                            <li><span class="time">10:00 - 10:30</span> <span class="event">Ceremonia de Inauguración</span></li>
+                            <li><span class="time">10:30 - 11:30</span> <span class="event"><strong>Conferencia Magistral 1:</strong> Evolución e Implementación de Espacios Inmersivos de Alto Rendimiento: Un Modelo de Triple Hélice para la Innovación Educativa en la UTEQ.</span></li>
+                            <li><span class="time">11:30 - 12:00</span> <span class="event">Coffee Break</span></li>
+                            <li><span class="time">12:00 - 14:00</span> <span class="event">Ponencias Simultáneas</span></li>
+                            <li><span class="time">14:00 - 15:00</span> <span class="event">Comida</span></li>
+                            <li><span class="time">15:00 - 17:00</span> <span class="event">Concurso y Evaluaciones de Pósters / Ponencias</span></li>
+                            <li><span class="time">16:00 - 20:00</span> <span class="event">Hackathon y Talleres Prácticos Simultáneos</span></li>
+                        </ul>
+                    </div>
+
+                    <div id="day-2" class="timeline-content">
+                        <div class="timeline-venue">📍 SEDE: Universidad Anáhuac Querétaro / UTEQ </div>
+                        <ul class="timeline-list">
+                            <li><span class="time">09:00 - 10:15</span> <span class="event">Registro de Asistentes</span></li>
+                            <li><span class="time">10:30 - 11:30</span> <span class="event"><strong>Conferencia Magistral 2:</strong>Consultor en Inteligencia Artificial aplicada a la educación y comunicación científica.</span></li>
+                            <li><span class="time">11:30 - 12:30</span> <span class="event">Panel de Educación y Tecnología</span></li>
+                            <li><span class="time">12:30 - 13:10</span> <span class="event">Recorrido Universitario por Instalaciones</span></li>
+                            <li><span class="time">13:10 - 14:20</span> <span class="event">Traslado de Asistentes a la UTEQ</span></li>
+                            <li><span class="time">14:20 - 16:00</span> <span class="event">Presentaciones Orales Simultáneas </span></li>
+                            <li><span class="time">16:00 - 20:00</span> <span class="event">Hackathon y Talleres Prácticos</span></li>
+                        </ul>
+                    </div>
+
+                    <div id="day-3" class="timeline-content">
+                        <div class="timeline-venue">📍 SEDE: Universidad Tecnológica de Querétaro (UTEQ)</div>
+                        <ul class="timeline-list">
+                            <li><span class="time">09:00 - 11:00</span> <span class="event">Ponencias Simultáneas</span></li>
+                            <li><span class="time">11:00 - 12:00</span> <span class="event">Taller Demostrativo de Realidad Aumentada</span></li>
+                            <li><span class="time">12:00 - 13:00</span> <span class="event">Premiación Hackathon: Challenge de Diseño</span></li>
+                            <li><span class="time">12:00 - 15:00</span> <span class="event">Bloque de Ponencias Simultáneas</span></li>
+                            <li><span class="time">15:00 - 15:20</span> <span class="event">Traslado al Gimnasio Auditorio UTEQ</span></li>
+                            <li><span class="time">15:20 - 16:20</span> <span class="event"><strong>Conferencia Magistral 3:</strong>De los residuos a materiales de ingeniería de alto valor: Cómo la ingeniería de materiales circulares está transformando la industria manufacturera.</span></li>
+                            <li><span class="time">16:20 - 16:40</span> <span class="event">Ceremonia de Clausura del Congreso</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="program-download-card">
+                    <div class="download-card-body">
+                        <div class="calendar-icon">📅</div>
+                        <h3>Consulta el programa completo por días</h3>
+                        <p>Obtén el documento PDF oficial con el desglose completo de ponencias, salas y ponentes.</p>
+                        <a href="https://drive.google.com/file/d/1nf2WCB9M6iJ5NHVnpa8NPMo-LZ14U2zy/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-download-pdf">
+                            VER PROGRAMA COMPLETO →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="convocatoria" class="convocatoria-section">
+        <h2 class="section-title">CONVOCATORIA</h2>
+        <p class="section-subtitle">Explora nuestras modalidades de participación, consulta los lineamientos e inscribe tu proyecto en el evento.</p>
+
+        <div class="convocatoria-grid">
+            <div class="conv-card">
+                <div class="conv-card-header">
+                    <h3>Presentación de Pósters y Trabajos Orales</h3>
+                    <span class="conv-card-icon">📊</span>
+                </div>
+                <p>Divulga tus hallazgos científicos y proyectos de innovación aplicada. Accede a las guías de evaluación y descarga la plantilla oficial para el envío de ponencias en formato extenso.</p>
+                <div class="conv-card-actions">
+                    <a href="https://form.jotform.com/262037484928870" target="_blank" rel="noopener noreferrer" class="btn-conv">Registro de Participación →</a>
+                    <a href="https://docs.google.com/document/d/1dDajRMqqjQZZLgMYAWobzOf9dfZSCuZL/edit?usp=drive_link&ouid=105906005549265043560&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-conv-outline">📥 Descargar Formato Extenso</a>
+                    <a href="https://drive.google.com/file/d/1tQ00WjjtWRn8QZeZhzFmHopMLGrwWNji/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-conv-outline">📋 Métricas de Evaluación de Póster</a>
+                </div>
+            </div>
+
+            <div class="conv-card orange">
+                <div class="conv-card-header">
+                    <h3>Hackathon: CHALLENGE DE DISEÑO</h3>
+                    <span class="conv-card-icon">💻</span>
+                </div>
+                <p>Enfrenta desafíos tecnológicos de alto impacto y demuestra tu capacidad de innovación resolviendo problemáticas reales orientadas a la Industria 5.0.</p>
+                <div class="conv-card-actions">
+                    <a href="https://form.jotform.com/262036928262863" target="_blank" rel="noopener noreferrer" class="btn-conv">Formulario de Registro →</a>
+                    <a href="https://drive.google.com/file/d/1Ixj4wb6XtwJPJlg139EqkEOnAmdAXl_7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-conv-outline">📋 BASES DE LA CONVOCATORIA</a>
+                    <a href="https://docs.google.com/document/d/13FXTpSdDUE3C-zHPivW8Y5ZKruNAjLTS/edit?usp=sharing&ouid=105906005549265043560&rtpof=true&sd=true" download class="btn-conv-outline">📥 Descargar Carta Responsiva</a>
+                </div>
+            </div>
+
+            <div class="conv-card">
+                <div class="conv-card-header">
+                    <h3>Talleres</h3>
+                    <span class="conv-card-icon">⚙️</span>
+                </div>
+                <p>Desarrolla habilidades especializadas junto a referentes del sector tecnológico. Formato interactivo con cupo limitado a 20 asistentes para asegurar un aprendizaje de alto nivel.</p>
+                <div class="conv-card-actions">
+                    <button onclick="toggleTalleres()" class="btn-conv" style="border:none; cursor:pointer;">Ver los 10 Talleres ↓</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="workshops-container" class="workshops-container">
+            <button onclick="closeTalleres()" class="close-workshops-btn" title="Cerrar talleres">×</button>
+            <h3 class="workshops-title">Talleres Disponibles (Cupo Máximo 20 por Taller)</h3>
+            
+            <div class="workshops-grid">
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Dr. Tushar Janardan Pawar</div>
+                                <span class="workshop-badge">Inteligencia Artificial</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Introducción al Diseño Molecular Automatizado: Filtrado con Machine Learning y Visualización 3D en la Nube.</div>
+                        <div class="workshop-desc">Machine Learning aplicado al diseño molecular y Computación en la Nube (Cloud Computing)</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/introduccion-al-diseno-molecular-automatizado-3d-machine-learning-tickets-1993866654838?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Ing. Héctor López Nicolás</div>
+                                <span class="workshop-badge">Mantenimiento Industrial</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Manufactura CFRP por método VARI</div>
+                        <div class="workshop-desc">¿Cómo lograr piezas de fibra de carbono perfectas, sin burbujas y con máxima resistencia? En este taller especializado aprenderás el paso a paso del método VARI (Vacuum Assisted Resin Infusion). Domina la selección de materiales, el sellado de vacío, la dinámica de flujo de resina y las mejores prácticas para fabricar compuestos poliméricos avanzados de estándar profesional. 💡 Optimiza peso, reduce defectos y domina la manufactura de materiales avanzados.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/manufactura-cfrp-por-metodo-vari-tickets-1993869812282?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Ing. Andrea Sarahi López Guerrero</div>
+                                <span class="workshop-badge">TI</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Ingenieria de prompts</div>
+                        <div class="workshop-desc">La habilidad más demandada del siglo XXI no es programar la IA, es saber dirigirla. En este taller aprenderás las técnicas y marcos de trabajo (frameworks) de la Ingeniería de Prompts para multiplicar tu productividad. Descubre cómo diseñar órdenes avanzadas, reducir alucinaciones en los modelos y extraer el máximo potencial de herramientas como ChatGPT, Claude y otras IAs generativas. 💡 Deja de perder tiempo editando respuestas malas. Aprende a obtener el resultado perfecto al primer intento.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/ingenieria-de-prompts-ia-tickets-1993870116191?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Mtro. Luis Fermín López Martínez & M. en E. Rolando Gutiérrez López</div>
+                                <span class="workshop-badge">Inteligencia Artificial</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Implementación del Control Estadístico de Proceso a través de la IA</div>
+                        <div class="workshop-desc">A través del diseño y generación de PROMST por medio de diversas aplicaciones de IA´s</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/implementacion-del-control-estadistico-de-proceso-a-traves-de-la-ia-tickets-1993870977768?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Dr. Luis Guadalupe Macias Trejo</div>
+                                <span class="workshop-badge">Análisis de Datos</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Power BI desde cero: Cosntruye Dashboards Profesionales para la toma de Decisiones</div>
+                        <div class="workshop-desc">Tus datos tienen la respuesta... solo necesitas aprender a visualizarla. En este taller aprenderás desde cero los fundamentos de Microsoft Power BI, la herramienta líder en Business Intelligence. Descubre cómo limpiar datos, crear métricas clave y construir dashboards profesionales que impacten a tu equipo y directivos, permitiéndote tomar decisiones estratégicas basadas en evidencias reales. 💡 Convierte montañas de datos en decisiones claras, rápidas y rentables.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/como-usar-powerbi-tickets-1994583263233?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Dr. Marco Tulio </div>
+                                <span class="workshop-badge">Inteligencia Artificial</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">De la Caja Negra a la Toma de Decisiones Transparentes</div>
+                        <div class="workshop-desc">Descubre cómo convertir la complejidad de los algoritmos e Inteligencia Artificial en procesos explicables, éticos y auditables. Un taller práctico para construir tecnología justa y libre de sesgos.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/de-la-caja-negra-a-la-toma-de-decisiones-transparente-tickets-1994583838955?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Mtro. Jorge Alberto Izaguirre Ysaguirre</div>
+                                <span class="workshop-badge">Robotica</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Introducción a la Robotica (taller practico)</div>
+                        <div class="workshop-desc">En el taller Introducción a la Robótica aprenderás a conectar el software con la acción física. Descubre cómo funcionan los sentidos de los robots (sensores), sus músculos (motores) y su cerebro (microcontroladores) para crear máquinas autónomas desde cero. No necesitas ser un experto, solo tener curiosidad por entender cómo funciona el futuro.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/introduccion-a-la-robotica-taller-practico-tickets-1994584115783?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Dr. Eduardo Celso Cruz</div>
+                                <span class="workshop-badge">Entornos Digitales</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Introducción a los Gemelos Digitales</div>
+                        <div class="workshop-desc">En este taller de Introducción a los Gemelos Digitales, entenderás cómo la fusión del IoT, los datos masivos y el modelado 3D permite monitorear y optimizar activos físicos a distancia. Desde predecir fallas antes de que ocurran hasta mejorar procesos industriales, domina la herramienta clave de la Industria 4.0.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/gemelos-digitales-introduccion-tickets-1994584754694?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">M. en C. Antonio Salomón Morales Torres (UTEQ)</div>
+                                <span class="workshop-badge">Industria 5.0</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">Manufactura Aditiva por Impresión en 3D</div>
+                        <div class="workshop-desc">En este taller de Manufactura Aditiva por Impresión en 3D, aprenderás los fundamentos, tecnologías (FDM, SLA, SLM) y materiales que están redefiniendo la producción industrial. Desde el prototipado rápido hasta la fabricación final de componentes ligeros y resistentes, domina la herramienta clave de la producción moderna.</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/manufactura-aditiva-por-impresion-en-3d-tickets-1994585062615?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div>
+                        <div class="workshop-header">
+                            <div>
+                                <div class="workshop-author-name">Ing. Luis Octavio Galindo</div>
+                                <span class="workshop-badge">Industria 5.0</span>
+                            </div>
+                        </div>
+                        <div class="workshop-title">"TALLER EMPRESA KOSTAL"</div>
+                        <div class="workshop-desc">Por definir</div>
+                    </div>
+                    <div>
+                        <div class="workshop-capacity">👥 Capacidad Máxima: 20 participantes</div>
+                        <a href="https://www.eventbrite.com.mx/e/taller-empresa-kostal-tickets-1993870235548?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn-eventbrite">Inscribirse en Eventbrite →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-to-convocatoria-wrapper">
+                <button onclick="closeTalleres()" class="btn-back-up">↑ Volver a Convocatorias</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="sedes" class="sedes-section">
+        <h2 class="section-title">SEDES</h2>
+        <p class="section-subtitle">Conoce los lugares donde se llevarán a cabo las actividades del congreso</p>
+
+        <div class="sedes-grid">
+            <div class="sede-card">
+                <img src="galeria/sedeUteq.png" alt="Universidad Tecnológica de Querétaro" class="sede-image">
+                <div class="sede-content">
+                    <div>
+                        <span class="sede-tag">SEDE PRINCIPAL</span>
+                        <h3 class="sede-name">UTEQ</h3>
+                        <p class="sede-desc">Universidad Tecnológica de Querétaro. Sede de inauguración y clausura del congreso.</p>
+                        <div class="sede-address">
+                            📍 Av. Pie de la Cuesta No. 2501, Col. Nacional, Querétaro, Qro. C.P. 76148
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Universidad+Tecnol%C3%B3gica+de+Quer%C3%A9taro" target="_blank" rel="noopener noreferrer" class="btn-map">CÓMO LLEGAR →</a>
+                </div>
+            </div>
+
+            <div class="sede-card">
+                <img src="galeria/sedeAnahuac.png" alt="Universidad Anáhuac Querétaro" class="sede-image">
+                <div class="sede-content">
+                    <div>
+                        <span class="sede-tag">SEDE SECUNDARIA</span>
+                        <h3 class="sede-name">Universidad Anáhuac Querétaro</h3>
+                        <p class="sede-desc">Universidad Anáhuac Campus Querétaro. Sede matutina para las mesas del Día 02.</p>
+                        <div class="sede-address">
+                            📍 Cto. Universidades I, Fracción 2, Zibatá, Querétaro, Qro. C.P. 76246
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Universidad+An%C3%A1huac+Quer%C3%A9taro" target="_blank" rel="noopener noreferrer" class="btn-map">CÓMO LLEGAR →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="logos-strip">
+        <img src="galeria/logosInst.png" alt="Logos Institucionales">
+    </div>
+
+    <footer id="contacto" class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="galeria/logoWhite.png" alt="Códice 5.0" class="footer-logo">
+                <p>Es el 1.er Congreso Internacional de Operaciones (OT), Datos, Inteligencia, 
+                    Ciberseguridad y Entornos Digitales 5.0 (CODICE 2026)</p>
+                <p class="footer-organizer">Organizado por la Universidad Tecnológica de Querétaro (UTEQ) 
+                    en colaboración con la Universidad Anáhuac Querétaro, la Universidad Internacional de La Rioja en México (UNIR México) y 
+                    la Escuela Nacional de Estudios Superiores Unidad Juriquilla UNAM (ENES Juriquilla). </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#sobre-codice">Temáticas</a></li>
+                    <li><a href="#conferencistas">Conferencistas</a></li>
+                    <li><a href="#programa">Programa</a></li>
+                    <li><a href="#sedes">Sedes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul class="contact-info-list">
+                    <li class="contact-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:dpidt@uteq.edu.mx">dpidt@uteq.edu.mx</a>
+                    </li>
+                    <li class="contact-item">
+                        <span class="icon">📍</span>
+                        <span>Av. Pie de la Cuesta No. 2501, Col. Nacional, Querétaro, Qro. C.P. 76148</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="icon">📞</span>
+                        <span>Llamadas al (442) 209 6100 ext. 2382 </span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon-ws"></span>
+                        <span>Mensajes al (442) 284 21 34</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2026 CODICE 5.0</div>
+            <div style="text-align: center;"><p>Este programa es público, ajeno a cualquier partido político. Queda prohibido el uso para fines distintos a los establecidos en el programa.</p></div>
+            <div>
+                <a href="https://www.uteq.edu.mx" target="_blank" rel="noopener noreferrer">www.uteq.edu.mx</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Manejo básico del menú móvil dinámico
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        if (menuToggle && navbar) {
+            menuToggle.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+        }
+
+        function closeMenu() {
+            if (navbar && navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
