@@ -727,9 +727,9 @@ body { background-color: #ffffff; color: #333; }
 }
 
 .logos-strip img {
-    max-width: 50%;
+    max-width: 20%;
     height: auto;
-    max-height: 80px;
+    max-height: 20px;
     object-fit: contain;
     display: block;
     margin: 0 auto;
