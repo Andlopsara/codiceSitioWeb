@@ -714,18 +714,26 @@ body { background-color: #ffffff; color: #333; }
 /* --- FRANJA BLANCA PARA LOGOS ORGANIZADORES --- */
 .logos-strip {
     background-color: #ffffff;
-    padding: 10px 8%;
-    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
     border-top: 1px solid #e2e8f0;
+    text-align: center;
 }
 
-.logos-strip img {
-    max-width: 500%;
+.logos-responsive {
+    display: block;
+    width: 100%;
+}
+
+.logos-responsive img {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
     height: auto;
-    max-height: 80px;
-    object-fit: contain;
+    margin: 0 auto;
 }
-
 /* --- SECCIÓN CONTACTO Y FOOTER --- */
 .footer-section {
     background-color: #0b1f52;

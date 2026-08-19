@@ -676,8 +676,18 @@
     </section>
 
     <div class="logos-strip">
-        <img src="galeria/logosInst.png" alt="Logos Institucionales">
-    </div>
+    <picture class="logos-responsive">
+        <!-- Solo se utiliza en celulares -->
+        <source 
+            media="(max-width: 850px)" 
+            srcset="galeria/logos-institucionales-mobile.png">
+
+        <!-- Se utiliza en PC y tablet -->
+        <img 
+            src="galeria/logos-institucionales.png" 
+            alt="Instituciones participantes del Congreso CÓDICE 2026">
+    </picture>
+</div>
 
     <footer id="contacto" class="footer-section">
         <div class="footer-grid">
