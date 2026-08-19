@@ -711,23 +711,19 @@ body { background-color: #ffffff; color: #333; }
 .btn-map { border: 1.5px solid #0b1f52; color: #0b1f52; padding: 8px 16px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; text-decoration: none; transition: all 0.3s; width: fit-content; }
 .btn-map:hover { background-color: #0b1f52; color: #ffffff; }
 
-/* --- FRANJA BLANCA PARA LOGOS ORGANIZADORES --- */
+
+/* --- FRANJA DE LOGOS INSTITUCIONALES --- */
+
 .logos-strip {
-    background-color: #ffffff;
-    padding: 15px;
     width: 100%;
+    background-color: #ffffff;
+    padding: 15px 3%;
     box-sizing: border-box;
     overflow: hidden;
     border-top: 1px solid #e2e8f0;
-    text-align: center;
 }
 
-.logos-responsive {
-    display: block;
-    width: 100%;
-}
-
-.logos-responsive img {
+.logos-img {
     display: block;
     width: 100%;
     max-width: 1200px;
