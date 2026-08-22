@@ -380,35 +380,35 @@ body { background-color: #ffffff; color: #333; }
 /* Tarjeta Especial del Panel */
 .panel-special-card {
     background: linear-gradient(135deg, #f8fafc, #edf2f7);
-    border-radius: 16px;
-    padding: 35px 30px;
+    border-radius: 18px;
+    padding: 38px 30px;
     border: 1px solid #cbd5e1;
-    max-width: 1200px;
+    max-width: 1450px;
     margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.05);
 }
 
 .panel-badge {
     background-color: #0b1f52;
     color: #ffffff;
-    font-size: 0.65rem;
+    font-size: 0.72rem;
     font-weight: 800;
-    padding: 4px 12px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    border-radius: 14px;
     text-transform: uppercase;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .panel-title {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     color: #0b1f52;
     font-weight: 900;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .panel-subtitle {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #f28b00;
     font-weight: 700;
     font-style: italic;
@@ -419,52 +419,141 @@ body { background-color: #ffffff; color: #333; }
     display: flex;
     justify-content: center;
     gap: 20px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #475569;
-    font-weight: 600;
+    font-weight: 700;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+}
+
+/* Moderadora */
+.panel-moderator {
+    max-width: 620px;
+    margin: 0 auto 34px;
+    background: #ffffff;
+    border: 1px solid #dce4ed;
+    border-radius: 16px;
+    padding: 18px 22px;
+    box-shadow: 0 6px 18px rgba(11,31,82,0.07);
+}
+
+.moderator-badge,
+.panelist-badge {
+    display: inline-block;
+    background: #f28b00;
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.moderator-badge {
+    background: #0b1f52;
+    margin-bottom: 10px;
+}
+
+.moderator-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    text-align: left;
+}
+
+.moderator-avatar {
+    width: 125px;
+    height: 125px;
+    flex: 0 0 125px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    border: 0px solid #f28b00;
+}
+
+.panel-moderator h4 {
+    color: #0b1f52;
+    font-size: 1.05rem;
+    font-weight: 900;
+    line-height: 1.25;
+    margin-bottom: 6px;
+}
+
+.panel-moderator p {
+    color: #64748b;
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.panelists-heading {
+    color: #0b1f52;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.panelists-heading::before,
+.panelists-heading::after {
+    content: "";
+    height: 1px;
+    background: #f28b00;
+    flex: 1;
+    max-width: 260px;
 }
 
 .panelists-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .panelist-item {
     background: #ffffff;
-    padding: 20px 15px;
-    border-radius: 12px;
+    padding: 18px 12px 20px;
+    border-radius: 14px;
     border: 1px solid #e2e8f0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.panelist-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px rgba(11,31,82,0.10);
 }
 
 .panelist-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 155px;
+    height: 155px;
+    border-radius: 10px;
     background-size: cover;
     background-position: center;
-    border: 2px solid #f28b00;
-    margin-bottom: 12px;
+    border: 0px solid #f28b00;
+    margin-bottom: 9px;
 }
 
 .panelist-item h4 {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: #0b1f52;
     font-weight: 800;
-    margin-bottom: 4px;
+    margin: 7px 0 5px;
     line-height: 1.2;
 }
 
 .panelist-item p {
     font-size: 0.72rem;
     color: #64748b;
-    line-height: 1.3;
+    line-height: 1.35;
 }
 
 /* --- ESTILOS PROGRAMA CON TIMELINE Y TARJETA PDF --- */
@@ -1009,6 +1098,25 @@ body { background-color: #ffffff; color: #333; }
     .panel-meta-info {
         flex-direction: column;
         gap: 5px;
+    }
+}
+
+/* AJUSTES RESPONSIVOS DEL PANEL */
+@media (max-width: 1200px) {
+    .panelists-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .panel-title { font-size: 1.35rem; }
+    .panel-subtitle { font-size: 0.9rem; }
+    .panelists-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .panelist-avatar {
+        width: 145px;
+        height: 145px;
     }
 }
 
